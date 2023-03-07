@@ -1,0 +1,315 @@
+@charset "UTF-8";
+@import "../../node_modules/normalize.css/normalize.css"; /** navbar.css */
+/* Färg och ramar */
+@import url("https://fonts.googleapis.com/css2?family=Martian+Mono&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Martian+Mono&display=swap");
+.navbar {
+  background-color: #8892BF;
+  border-top: 4px solid #4F5B93;
+  text-align: center;
+  font-size: 1.2em;
+}
+
+/* Länkar */
+.navbar a {
+  display: inline-block;
+  padding: 0.2em 0.5em;
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+.navbar a:hover {
+  color: #EEE;
+  background-color: #4F5B93;
+}
+
+/* Ta bort listmarkeringar marginaler och padding */
+.navbar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Lägg listelementen på rad */
+.navbar li {
+  display: inline;
+}
+
+/** header.css */
+/* Prepare variables */
+:root {
+  --light-color: #CFC;
+  --medium-color: #7A7;
+  --dark-color: #363;
+}
+
+/* Set colors, size and prepare positioning */
+.header {
+  background-color: black;
+  border-bottom: 4px solid var(--dark-color);
+  position: relative;
+}
+
+/* Position and size the logo */
+.header .logo {
+  width: 150px;
+  position: relative;
+  top: 5px;
+  left: 20px;
+}
+
+/* Modify and poistion the title */
+.header .title {
+  color: white;
+  font-size: 4em;
+  text-shadow: 2px 2px 2px var(--medium-color);
+  position: relative;
+  top: -90px;
+  left: 200px;
+}
+
+/*
+ * Modify and position the subtitle.
+ */
+.header .subtitle {
+  color: var(--dark-color);
+  font-size: 24px;
+  display: inline-block;
+  transform: rotate(-20deg);
+  position: relative;
+  top: -70px;
+  left: 200px;
+}
+
+/** footer.css */
+/* Set colors and size */
+.footer {
+  background: linear-gradient(to bottom, #666, #000);
+  color: #FFF;
+  padding: 0 1em;
+}
+
+/* Links */
+.footer a {
+  color: #FFF;
+}
+
+.footer a:hover {
+  color: lime;
+  text-decoration: none;
+}
+
+/* Style content */
+.box h4 {
+  border-bottom: 2px solid #fff;
+}
+
+.final {
+  text-align: center;
+}
+
+/*
+ * Style the rows and columns
+ */
+.footer .row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.footer .row > .col3 {
+  width: 33.3333333333%;
+}
+
+.footer .row > .col1 {
+  width: 100%;
+}
+
+/** typography.css */
+.header {
+  font-family: "Martian Mono", monospace;
+}
+
+/** footer.css */
+/* Set colors and size */
+body {
+  background: #eee;
+}
+
+.main {
+  margin: 0 auto;
+  max-width: 800px;
+  min-height: 20em;
+}
+
+.article {
+  overflow: auto;
+  background: #fff;
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+.article h1 {
+  font-size: 2em;
+  border-bottom: 4px double #ccc;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.article .author {
+  margin-top: -1em;
+  font-size: 0.8em;
+  color: #666;
+  font-style: italic;
+}
+
+/** figure.css */
+.figure {
+  display: inline-block;
+  margin: 0;
+  padding: 0.5em;
+  border: 1px solid #ccc;
+}
+
+.figure img {
+  max-width: 100%;
+}
+
+.figure figcaption {
+  caption-side: bottom;
+  font-style: italic;
+  padding-top: 1em;
+}
+
+.figure.right {
+  float: right;
+  margin-left: 1em;
+}
+
+.figure.left {
+  float: left;
+  margin-right: 1em;
+}
+
+.figure.center {
+  display: block;
+  text-align: center;
+}
+
+/** byline.css */
+.byline {
+  display: block;
+  overflow: auto;
+  clear: both;
+  margin: 100 15px;
+  /* background-color: darkgreen; */
+  background: linear-gradient(to right bottom, #fff, #151);
+}
+
+.byline .figure {
+  display: inline-block;
+  margin: 0;
+  padding: 0.5em;
+}
+
+/** two-coloumn-layout.css */
+.two-col-layout {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.two-col-layout > .main {
+  width: 75%;
+}
+
+.two-col-layout > .aside {
+  width: 25%;
+}
+
+.aside {
+  background-color: #fff;
+  border-right: 1px solid #ccc;
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-top: 24px;
+}
+
+.aside h4 {
+  border-bottom: 1px solid #ccc;
+}
+
+/** responsive.css */
+.img {
+  max-width: 100%;
+  display: block;
+}
+
+@media (max-width: 700px) {
+  .two-col-layout {
+    flex-wrap: wrap;
+  }
+  .two-col-layout > .main,
+  .two-col-layout > .aside {
+    width: 100%;
+  }
+}
+/** two-coloumn-layout.css */
+.two-col-layout {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.two-col-layout > .main {
+  width: 75%;
+}
+
+.two-col-layout > .aside {
+  width: 25%;
+}
+
+.aside {
+  background-color: #fff;
+  border-right: 1px solid #ccc;
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-top: 24px;
+}
+
+.aside h4 {
+  border-bottom: 1px solid #ccc;
+}
+
+/** typography.css */
+.header {
+  font-family: "Martian Mono", monospace;
+}
+
+html {
+  background-color: #000;
+}
+
+/*
+body {
+    background-color: #8892BF;
+    border: 4px solid #4F5B93;
+}
+
+main {
+    margin: 0 auto;
+    max-width: 800px;
+
+    padding: 0.5em;
+
+    border: 4px solid #CCC;
+    background-color: #F2F2F2;
+    color: #333;
+}
+*/
