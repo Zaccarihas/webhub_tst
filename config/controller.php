@@ -11,16 +11,17 @@ function extract_yaml(&$file) {
 };
 
 function generate_navbar() {
+    $contentfolder = __DIR__.'/../content/';
     $nav = "<nav class='navbar'><ul>";
-    $subs = scandir('../../../secure/nav/content');
+    $subs = scandir($contentfolder);
     foreach($subs as $sub){
         if($sub != '.' and $sub != '..') {
-            if(is_dir('../../../secure/nav/content/'.$sub)){
+            if(is_dir($contentfolder.$sub)){
                 // Lägg in katalogens index.md titel
                 $sub = $sub."/index.md";
             }
             // Extract the title from the file
-            $file_content = file('../../../secure/nav/content/'.$sub);
+            $file_content = file($contentfolder.$sub);
             $sub_yaml = extract_yaml($file_content);
             $nav .= "<li><a href='index.php?page=".$sub."'>".$sub_yaml["Title"]."</a></li>";
         }
@@ -28,7 +29,3 @@ function generate_navbar() {
     $nav .= "</ul></nav>";
     return $nav;
 };
-
-echo "Hello";
-
-
