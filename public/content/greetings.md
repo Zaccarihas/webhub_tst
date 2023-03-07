@@ -1,9 +1,0 @@
----
-Title: Hälsning
----
-
-En hälsningssida
-==========================
-
-
-
