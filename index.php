@@ -25,4 +25,3 @@
 </main>
 
 <?php include('view/shared/footer.php') ?>
-*/

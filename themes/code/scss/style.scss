@@ -1,4 +1,11 @@
-@import "../../node_modules/normalize.css/normalize.css";
+@import "/themes/node_modules/normalize.css/normalize.css";
+@import "../../shared/scss/fa/fontawesome.scss";
+@import "../../shared/scss/fa/solid.scss";
+@import "../../shared/scss/fa/brands.scss";
+
+@import "colors.scss";
+@import "blockquote.scss";
+@import "code.scss";
 
 @import "navbar.scss";
 @import "header.scss";
@@ -13,7 +20,16 @@
 @import "typography.scss";
 
 html {
-    background-color: #000;
+    box-sizing: border-box;
+    background-color: $background-color;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+* {
+    color: $font-color;
 }
 
 /*

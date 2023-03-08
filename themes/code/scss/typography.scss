@@ -1,7 +1,14 @@
 /** typography.css */
 
-@import url('https://fonts.googleapis.com/css2?family=Martian+Mono&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Martian+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Mukta:wght@300&display=swap');
+
 
 .header {
-    font-family: 'Martian Mono', monospace;
+    //font-family: 'Martian Mono', monospace;
+    font-family: 'Bree Serif', serif;
+}
+
+p {
+    font-family: 'Mukta', sans-serif;
 }

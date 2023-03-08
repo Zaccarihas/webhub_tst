@@ -1,16 +1,9 @@
 /** header.css */
 
-/* Prepare variables */
-:root {
-    --light-color: #CFC;
-    --medium-color: #7A7;
-    --dark-color: #363;
-}
-
 /* Set colors, size and prepare positioning */
 .header {
-    background-color: black;
-    border-bottom: 4px solid var(--dark-color);
+    background-color: $darkbottom-color;
+    border-bottom: 4px solid $accent-color;
     position: relative;
 }
 
@@ -29,7 +22,7 @@
     text-shadow: 2px 2px 2px var(--medium-color);
     position: relative;
     top: -90px;
-    left: 200px;
+    left: 100px;
 }
 
 /*
@@ -40,9 +33,8 @@
     font-size: 24px;
 
     display: inline-block;
-    transform: rotate(-20deg);
 
     position: relative;
-    top: -70px;
-    left: 200px;
+    top: -50px;
+    left: 100px;
 }
