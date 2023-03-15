@@ -1,0 +1,25 @@
+{
+    "extends": [
+        "stylelint-config-sass-guidelines"
+    ],
+    "rules": {
+        "indentation": [
+            4,
+            {
+                "except": [
+                    "value"
+                ]
+            }
+        ],
+        "at-rule-no-unknown": null,
+        "order/properties-alphabetical-order": null,
+        "selector-max-compound-selectors": 5
+    },
+    "ignoreFiles": [
+        "**/node_modules/",
+        "shared/scss/fa/**/*.scss",
+        "shared/fa630/**/*.scss",
+        "**/*.css",
+        "**/*.min.css"
+    ]
+}

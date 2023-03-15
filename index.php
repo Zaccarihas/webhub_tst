@@ -16,12 +16,23 @@
 
     include('view/shared/header.php');
         
-    $parsedown = new Parsedown();
+    $parsedown = new ParsedownExtra();
     
 ?>
 
-<main>
-    <?= $parsedown->text($page) ?>
+<aside class="sidebar"></aside>
+<main class="grid page_content">
+    
+    <div class="top-left">
+        Ett huvud för artikeln
+    </div>
+    <div class="top-right">
+        En fot för artikeln
+    </div>
+    <div class="bottom">
+        <?= $parsedown->text($page) ?>
+    </div>    
+    
 </main>
 
 <?php include('view/shared/footer.php') ?>

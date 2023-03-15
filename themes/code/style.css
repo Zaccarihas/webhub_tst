@@ -1,11 +1,30 @@
 @charset "UTF-8";
-@import "/themes/node_modules/normalize.css/normalize.css"; /*!
+@import '/themes/node_modules/normalize.css/normalize.css';
+@import url("https://fonts.googleapis.com/css2?family=Bree+Serif&family=Mukta:wght@300&display=swap");
+html {
+  box-sizing: border-box;
+  background-color: #3d5a80;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+* {
+  color: #000;
+}
+
+body {
+  background: #e0fbfc;
+}
+
+/*!
  * Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com
  * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
  * Copyright 2023 Fonticons, Inc.
  */
-@import url("https://fonts.googleapis.com/css2?family=Bree+Serif&family=Mukta:wght@300&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Bree+Serif&family=Mukta:wght@300&display=swap");
 .fa {
   font-family: var(--fa-style-family, "Font Awesome 6 Free");
   font-weight: var(--fa-style, 900);
@@ -10278,6 +10297,181 @@ readers do not read off random characters that represent icons */
   content: "\f3f6";
 }
 
+/** typography.css */
+.header {
+  font-family: "Bree Serif", serif;
+}
+
+p {
+  font-family: "Mukta", sans-serif;
+}
+
+.grid {
+  display: grid;
+}
+
+.wrapper {
+  max-width: 960px;
+  margin: 0 auto;
+  grid-template-columns: 200px auto;
+  grid-template-rows: 150px 50px 600px 200px;
+}
+
+.page_header {
+  grid-column: 1/3;
+  grid-row: 1/1;
+}
+
+.navbar {
+  grid-column: 1/3;
+  grid-row: 2/2;
+}
+
+.sidebar {
+  grid-column: 1/1;
+  grid-row: 3/3;
+}
+
+.page_content {
+  grid-column: 2/3;
+  grid-row: 3/3;
+  grid-template-areas: "top-left top-right" "bottom bottom";
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 25px;
+}
+.page_content .bottom {
+  grid-area: bottom;
+}
+.page_content .top-left {
+  grid-area: top-left;
+}
+.page_content .top-right {
+  grid-area: top-right;
+}
+
+.page_footer {
+  grid-column: 1/3;
+  grid-row: 4/4;
+}
+
+@media screen and (max-width: 960px) {
+  .page_content {
+    grid-gap: 5px;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-areas: "top-left" "top-right" "bottom";
+  }
+}
+/** header.css */
+/* Set colors, size and prepare positioning */
+.page_header {
+  background-color: #294974;
+  border-bottom: 4px solid #ee6c4d;
+  position: relative;
+}
+
+/* Position and size the logo */
+.page_header .logo {
+  width: 150px;
+  position: relative;
+  top: 5px;
+  left: 20px;
+}
+
+/* Modify and poistion the title */
+.page_header .title {
+  color: #fff;
+  font-size: 4em;
+  text-shadow: 2px 2px 2px var(--medium-color);
+  position: relative;
+  top: -90px;
+  left: 100px;
+}
+
+/*
+ * Modify and position the subtitle.
+ */
+.page_header .subtitle {
+  color: var(--dark-color);
+  font-size: 24px;
+  display: inline-block;
+  position: relative;
+  top: -50px;
+  left: 100px;
+}
+
+/* Set colors and size */
+.page_footer {
+  background: linear-gradient(to bottom, #666, #000);
+  color: #fff;
+  padding: 0 1em;
+  /* Style content */
+}
+.page_footer a {
+  color: #fff;
+}
+.page_footer a:hover {
+  color: #ee6c4d;
+  text-decoration: none;
+}
+.page_footer i {
+  color: #fff;
+  font-size: 3em;
+  margin: 10px;
+}
+.page_footer .box h4 {
+  border-bottom: 2px solid #fff;
+}
+.page_footer .final {
+  text-align: center;
+  color: #fff;
+}
+.page_footer .row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 24px;
+}
+.page_footer .row > .col3 {
+  width: 33.3333333333%;
+}
+.page_footer .row > .col1 {
+  width: 100%;
+}
+
+/** navbar.css */
+/* Färg och ramar */
+.navbar {
+  background-color: #8892bf;
+  border-top: 4px solid #4f5b93;
+  text-align: center;
+  font-size: 1.2em;
+}
+
+/* Länkar */
+.navbar a {
+  display: inline-block;
+  padding: 0.2em 0.5em;
+  color: #fff;
+  text-decoration: none;
+}
+
+.navbar a:hover {
+  color: #eee;
+  background-color: #4f5b93;
+}
+
+/* Ta bort listmarkeringar marginaler och padding */
+.navbar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Lägg listelementen på rad */
+.navbar li {
+  display: inline;
+}
+
 blockquote {
   font-style: italic;
   margin-left: 1em;
@@ -10311,172 +10505,6 @@ pre code {
   background: transparent;
   overflow-x: auto;
   line-height: 1.4;
-}
-
-/** navbar.css */
-/* Färg och ramar */
-.navbar {
-  background-color: #8892BF;
-  border-top: 4px solid #4F5B93;
-  text-align: center;
-  font-size: 1.2em;
-}
-
-/* Länkar */
-.navbar a {
-  display: inline-block;
-  padding: 0.2em 0.5em;
-  color: #FFFFFF;
-  text-decoration: none;
-}
-
-.navbar a:hover {
-  color: #EEE;
-  background-color: #4F5B93;
-}
-
-/* Ta bort listmarkeringar marginaler och padding */
-.navbar ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-
-/* Lägg listelementen på rad */
-.navbar li {
-  display: inline;
-}
-
-/** header.css */
-/* Set colors, size and prepare positioning */
-.header {
-  background-color: #294974;
-  border-bottom: 4px solid #ee6c4d;
-  position: relative;
-}
-
-/* Position and size the logo */
-.header .logo {
-  width: 150px;
-  position: relative;
-  top: 5px;
-  left: 20px;
-}
-
-/* Modify and poistion the title */
-.header .title {
-  color: white;
-  font-size: 4em;
-  text-shadow: 2px 2px 2px var(--medium-color);
-  position: relative;
-  top: -90px;
-  left: 100px;
-}
-
-/*
- * Modify and position the subtitle.
- */
-.header .subtitle {
-  color: var(--dark-color);
-  font-size: 24px;
-  display: inline-block;
-  position: relative;
-  top: -50px;
-  left: 100px;
-}
-
-/** footer.css */
-/* Set colors and size */
-.footer {
-  background: linear-gradient(to bottom, #666, #000);
-  color: #FFF;
-  padding: 0 1em;
-}
-
-/* Links */
-.footer a {
-  color: #FFF;
-}
-
-.footer a:hover {
-  color: lime;
-  text-decoration: none;
-}
-
-footer i {
-  color: white;
-  font-size: 3em;
-  margin: 10px;
-}
-
-/* Style content */
-.box h4 {
-  border-bottom: 2px solid #fff;
-}
-
-.final {
-  text-align: center;
-}
-
-/*
- * Style the rows and columns
- */
-.footer .row {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  gap: 24px;
-}
-
-.footer .row > .col3 {
-  width: 33.3333333333%;
-}
-
-.footer .row > .col1 {
-  width: 100%;
-}
-
-/** typography.css */
-.header {
-  font-family: "Bree Serif", serif;
-}
-
-p {
-  font-family: "Mukta", sans-serif;
-}
-
-/** footer.css */
-/* Set colors and size */
-body {
-  background: #eee;
-}
-
-.main {
-  margin: 0 auto;
-  max-width: 800px;
-  min-height: 20em;
-}
-
-.article {
-  overflow: auto;
-  background: #fff;
-  border-left: 1px solid #ccc;
-  border-right: 1px solid #ccc;
-  padding-left: 1em;
-  padding-right: 1em;
-}
-
-.article h1 {
-  font-size: 2em;
-  border-bottom: 4px double #ccc;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-.article .author {
-  margin-top: -1em;
-  font-size: 0.8em;
-  color: #666;
-  font-style: italic;
 }
 
 /** figure.css */
@@ -10526,101 +10554,6 @@ body {
   display: inline-block;
   margin: 0;
   padding: 0.5em;
-}
-
-/** two-coloumn-layout.css */
-.two-col-layout {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-.two-col-layout > .main {
-  width: 75%;
-}
-
-.two-col-layout > .aside {
-  width: 25%;
-}
-
-.aside {
-  background-color: #fff;
-  border-right: 1px solid #ccc;
-  padding-left: 1em;
-  padding-right: 1em;
-  padding-top: 24px;
-}
-
-.aside h4 {
-  border-bottom: 1px solid #ccc;
-}
-
-/** responsive.css */
-.img {
-  max-width: 100%;
-  display: block;
-}
-
-@media (max-width: 700px) {
-  .two-col-layout {
-    flex-wrap: wrap;
-  }
-  .two-col-layout > .main,
-  .two-col-layout > .aside {
-    width: 100%;
-  }
-}
-/** two-coloumn-layout.css */
-.two-col-layout {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-.two-col-layout > .main {
-  width: 75%;
-}
-
-.two-col-layout > .aside {
-  width: 25%;
-}
-
-.aside {
-  background-color: #fff;
-  border-right: 1px solid #ccc;
-  padding-left: 1em;
-  padding-right: 1em;
-  padding-top: 24px;
-}
-
-.aside h4 {
-  border-bottom: 1px solid #ccc;
-}
-
-/** typography.css */
-.header {
-  font-family: "Bree Serif", serif;
-}
-
-p {
-  font-family: "Mukta", sans-serif;
-}
-
-html {
-  box-sizing: border-box;
-  background-color: #3d5a80;
-}
-
-*, *:before, *:after {
-  box-sizing: inherit;
-}
-
-* {
-  color: #000;
 }
 
 /*

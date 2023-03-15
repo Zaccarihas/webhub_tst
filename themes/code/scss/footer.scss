@@ -1,51 +1,48 @@
-/** footer.css */
 
 /* Set colors and size */
-.footer {
+.page_footer {
     background: linear-gradient(to bottom, #666, #000);
-    color: #FFF;
+    color: #fff;
     padding: 0 1em;
-}
 
-/* Links */
-.footer a {
-    color: #FFF;
-}
+    a {
+        color: $font-alternative-color;
+    }
 
-.footer a:hover {
-    color: lime;
-    text-decoration: none;
-}
+    a:hover {
+        color: $accent-color;
+        text-decoration: none;
+    }
 
-footer i {
-    color: white;
-    font-size: 3em;
-    margin: 10px;
-}
+    i {
+        color: $font-alternative-color;
+        font-size: 3em;
+        margin: 10px;
+    }
 
-/* Style content */
-.box h4 {
-    border-bottom: 2px solid #fff;
-}
+    /* Style content */
+    .box h4 {
+        border-bottom: 2px solid #fff;
+    }
 
-.final {
-    text-align: center;
-}
+    .final {
+        text-align: center;
+        color: #fff;
+    }
 
-/*
- * Style the rows and columns
- */
- .footer .row {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    gap: 24px;
-}
+    // Style the rows and columns
+    .row {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 24px;
+    }
 
-.footer .row > .col3 {
-    width: calc(100%/3);
-}
+    .row > .col3 {
+        width: calc(100%/3);
+    }
 
-.footer .row > .col1 {
-    width: 100%;
+    .row > .col1 {
+        width: 100%;
+    }
 }

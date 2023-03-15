@@ -1,4 +1,4 @@
-        <footer class="footer">
+        <footer class="page_footer">
             <div class="row">
                 <div class="col3 box">
                     <p>Validering: <a href="http://validator.w3.org/check/referer">HTML</a></p>
@@ -8,6 +8,8 @@
                 </div>
                 <div class="col3 box">
                     <p><?= $weekday ?> <?= $today ?></p>
+                    <address>
+                       &#128236; <a href="mailto:anders@lofqvist.me">anders@lofqvist.me</a>
                 </div>
             </div>
             <div class="row">

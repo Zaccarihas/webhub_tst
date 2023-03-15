@@ -14,6 +14,10 @@ Ett litet markdown test
 
 Går den här sidan att parsa så att jag får ut innehållet på sidan?
 
+
+Här kommer en rubrik tvåa {#specificid}
+---------------------------------------
+
 * Det
 * Hoppas
 * Jag
@@ -38,3 +42,4 @@ Ett stycke till med **vanlig** text.
 > Block quot
 > Block quot
 > Block quot
+

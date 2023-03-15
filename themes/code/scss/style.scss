@@ -1,36 +1,32 @@
-@import "/themes/node_modules/normalize.css/normalize.css";
-@import "../../shared/scss/fa/fontawesome.scss";
-@import "../../shared/scss/fa/solid.scss";
-@import "../../shared/scss/fa/brands.scss";
+// Normalize and initate
+@import '/themes/node_modules/normalize.css/normalize.css';
+@import 'init';
 
-@import "colors.scss";
-@import "blockquote.scss";
-@import "code.scss";
+// Set color variables
+@import 'colors';
 
-@import "navbar.scss";
-@import "header.scss";
-@import "footer.scss";
-@import "typography.scss";
-@import "main.scss";
-@import "figure.scss";
-@import "byline.scss";
-@import "two-column-layout.scss";
-@import "responsive.scss";
-@import "two-column-layout.scss";
-@import "typography.scss";
+// Set fonts
+@import '../../shared/scss/fa/fontawesome';
+@import '../../shared/scss/fa/solid';
+@import '../../shared/scss/fa/brands';
+@import 'typography';
 
-html {
-    box-sizing: border-box;
-    background-color: $background-color;
-}
+// Set layout
+@import 'layout';
+//@import 'two-column-layout';
+//@import 'responsive';
 
-*, *:before, *:after {
-    box-sizing: inherit;
-}
+// Set main segments
+// @import 'main';
+@import 'header';
+@import 'footer';
+@import 'navbar';
 
-* {
-    color: $font-color;
-}
+// Set additional segments
+@import 'blockquote';
+@import 'code';
+@import 'figure';
+@import 'byline';
 
 /*
 body {

@@ -1,14 +1,14 @@
 /** header.css */
 
 /* Set colors, size and prepare positioning */
-.header {
+.page_header {
     background-color: $darkbottom-color;
     border-bottom: 4px solid $accent-color;
     position: relative;
 }
 
 /* Position and size the logo */
-.header .logo {
+.page_header .logo {
     width: 150px;
     position: relative;
     top: 5px;
@@ -16,8 +16,8 @@
 }
 
 /* Modify and poistion the title */
-.header .title {
-    color: white;
+.page_header .title {
+    color: #fff;
     font-size: 4em;
     text-shadow: 2px 2px 2px var(--medium-color);
     position: relative;
@@ -28,7 +28,7 @@
 /*
  * Modify and position the subtitle.
  */
- .header .subtitle {
+.page_header .subtitle {
     color: var(--dark-color);
     font-size: 24px;
 

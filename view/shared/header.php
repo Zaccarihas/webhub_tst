@@ -10,8 +10,8 @@
         <link rel="shortcut icon" href="img/favicon.ico"/>
         <link rel="stylesheet" href="themes/code/style.css">
     </head>
-    <body>   
-        <header class="header">
+    <body class="grid wrapper">   
+        <header class="page_header">
             <img class="logo" src="assetts/img/favicon.png">
             <span class="title">InfoRepo</span>
             <span class="subtitle">Min informationsportal</span>
