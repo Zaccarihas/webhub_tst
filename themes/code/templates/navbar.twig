@@ -1,0 +1,8 @@
+<!-- Navbar -->
+<nav class="navbar"><ul>
+    {% for itm in nav %}
+    <li><a href="index.php?page={{ itm.url }}">{{ itm.title }}</a></li>
+    {% endfor %}
+</ul></nav>
+
+

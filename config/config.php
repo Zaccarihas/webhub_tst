@@ -1,6 +1,6 @@
 <?php
 // Activate autoload
-require __DIR__.'/../vendor/autoload.php';
+require_once __DIR__.'/../vendor/autoload.php';
 
 // Report all types of errors
 error_reporting(-1);

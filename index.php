@@ -1,11 +1,20 @@
 <?php 
-    //require __DIR__.'/vendor/autoload.php';
 
     include('config/config.php');
-    include('config/controller.php');    
-        
+    include('config/controller.php');
+
+    $theme = 'code';
+
+    $loader = new \Twig\Loader\FilesystemLoader("themes/$theme");
+    $twig = new \Twig\Environment($loader, []);
+    /*
+    $twig = new \Twig\Environment($loader, [
+        'cache' => 'themes/shared/templ_cache'
+    ]);
+    */
+    
     // Generate navigation based on content
-    $nav = generate_navbar();    
+    $nav = generate_navbar_info();    
 
     // Separate yaml from markdown in sourcefile
     
@@ -14,25 +23,18 @@
     $yaml = extract_yaml($file);
     $page = implode($file);
 
-    include('view/shared/header.php');
+    // include('view/shared/header.php');
         
+    // Generate content from parsedown-file
     $parsedown = new ParsedownExtra();
+    $content = $parsedown->text($page);
+
+    // Render view through twig-template
+    echo $twig->render("index.twig", [
+        'title' =>  $yaml["Title"],
+        'nav' => $nav,
+        'content' => $content,
+    ])
     
 ?>
 
-<aside class="sidebar"></aside>
-<main class="grid page_content">
-    
-    <div class="top-left">
-        Ett huvud för artikeln
-    </div>
-    <div class="top-right">
-        En fot för artikeln
-    </div>
-    <div class="bottom">
-        <?= $parsedown->text($page) ?>
-    </div>    
-    
-</main>
-
-<?php include('view/shared/footer.php') ?>

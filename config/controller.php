@@ -29,3 +29,26 @@ function generate_navbar() {
     $nav .= "</ul></nav>";
     return $nav;
 };
+
+function generate_navbar_info() {
+    $contentfolder = __DIR__.'/../content/';
+    // $nav = "<nav class='navbar'><ul>";
+    $subs = scandir($contentfolder);
+    $nav = array();
+    foreach($subs as $sub){
+        if($sub != '.' and $sub != '..') {
+            if(is_dir($contentfolder.$sub)){
+                // Lägg in katalogens index.md titel
+                $sub = $sub."/index.md";
+            }
+            // Extract the title from the file
+            $file_content = file($contentfolder.$sub);
+            $sub_yaml = extract_yaml($file_content);
+            $nav[] = [
+                'url' =>$sub, 
+                'title' => $sub_yaml["Title"]
+            ];
+        }
+    }
+    return $nav;
+}
