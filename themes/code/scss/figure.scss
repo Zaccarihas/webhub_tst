@@ -1,33 +1,18 @@
-/** figure.css */
-
 .figure {
+
     display: inline-block;
     margin: 0;
     padding: 0.5em;
-    border: 1px solid #ccc;
-}
+    border: 1px solid $background-alternative-color;
 
-.figure img {
-    max-width: 100%;
-}
+    img {
+        max-width: 100%;
+    }
 
-.figure figcaption {
-    caption-side: bottom;
-    font-style: italic;
-    padding-top: 1em;
-}
+    figcaption {
+        caption-side: bottom;
+        font-style: italic;
+        padding-top: 1em;
+    }
 
-.figure.right {
-    float: right;
-    margin-left: 1em;
-}
-
-.figure.left {
-    float: left;
-    margin-right: 1em;
-}
-
-.figure.center {
-    display: block;
-    text-align: center;
 }

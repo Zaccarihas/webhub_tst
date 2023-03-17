@@ -1,16 +1,19 @@
 // Define colors
 $font-color: #000;
 $font-alternative-color: #fff;
+$background-color: #ccc;
+$background-alternative-color: #333;
+$logo-color: #dd9700;
 $accent-color: #ee6c4d;
-$background-color: #3d5a80;
+$font-meta-color: #4b7bbb;
+$page-background-color: #3d5a80;
 $darkbottom-color: #294974;
-$background-alternative-color: #e0fbfc;
 
 
 // Set standard box-sizing to border box for all elements.
 html {
     box-sizing: border-box;
-    background-color: $background-color;
+    background-color: $page-background-color;
 }
 
 *,

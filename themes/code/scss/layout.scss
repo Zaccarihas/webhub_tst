@@ -3,10 +3,10 @@
 }
 
 .wrapper {
-    max-width: 960px;
+    max-width: 1200px;
     margin: 0 auto;
     grid-template-columns: 200px auto;
-    grid-template-rows: 150px 50px 600px 200px;
+    grid-template-rows: 200px 50px auto 200px;
 }
 
 .page_header {

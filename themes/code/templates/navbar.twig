@@ -1,7 +1,7 @@
 <!-- Navbar -->
-<nav class="navbar"><ul>
+<nav class="navbar normal-font"><ul>
     {% for itm in nav %}
-    <li><a href="index.php?page={{ itm.url }}">{{ itm.title }}</a></li>
+    <li><a href="index.php?page={{ itm.url }}" {% if selected == itm.url %}class = "selected"{% endif %}>{{ itm.title }}</a></li>
     {% endfor %}
 </ul></nav>
 

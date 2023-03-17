@@ -1,12 +1,63 @@
-
-/* Set colors and size */
 .page_footer {
-    background: linear-gradient(to bottom, #666, #000);
-    color: #fff;
-    padding: 0 1em;
 
+    // Layout of the footer
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    gap: 20px;
+    grid-template-areas: "leftcol centercol rightcol";
+
+    padding: 1rem;
+    
+    .tools {
+        grid-area: leftcol;
+        justify-self: start;
+        align-self: start;
+
+        ul {
+            margin: 0;
+        }
+    }
+
+    address {
+        grid-area: centercol;
+        justify-self: center;
+        align-self: end;
+
+        i {
+            color: $font-alternative-color;
+            font-size: 3em;
+            margin: 10px;
+        }
+    
+        i:hover {
+            color: $accent-color;
+        }
+    }
+
+    .page_metadata {
+        grid-area: rightcol;
+        justify-self: right;
+        align-self: start;
+        color: $font-meta-color;
+    }
+
+
+    
+    //background: linear-gradient(to bottom, #666, #000);
+    background: $darkbottom-color;
+    color: $font-alternative-color;
+
+    h1 {
+        font-size: 1.1em;
+        font-weight: bold;
+        color: $logo-color;
+        margin: 0px;
+    }
+      
     a {
-        color: $font-alternative-color;
+        color: inherit;
+        text-decoration: none;
     }
 
     a:hover {
@@ -14,35 +65,5 @@
         text-decoration: none;
     }
 
-    i {
-        color: $font-alternative-color;
-        font-size: 3em;
-        margin: 10px;
-    }
 
-    /* Style content */
-    .box h4 {
-        border-bottom: 2px solid #fff;
-    }
-
-    .final {
-        text-align: center;
-        color: #fff;
-    }
-
-    // Style the rows and columns
-    .row {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        gap: 24px;
-    }
-
-    .row > .col3 {
-        width: calc(100%/3);
-    }
-
-    .row > .col1 {
-        width: 100%;
-    }
 }

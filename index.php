@@ -18,7 +18,12 @@
 
     // Separate yaml from markdown in sourcefile
     
-    $filename = (isset($_GET['page'])?'content/'.$_GET['page']:'content/index.md');
+    $pagename = 'index.md';
+    if (isset($_GET['page'])) {
+        $pagename = htmlentities($_GET['page']);
+    }
+    $filename = "content/$pagename";
+
     $file = file($filename);
     $yaml = extract_yaml($file);
     $page = implode($file);
@@ -29,11 +34,16 @@
     $parsedown = new ParsedownExtra();
     $content = $parsedown->text($page);
 
+    // Check time to load
+    $loadtime = microtime(true) - $_SERVER["REQUEST_TIME_FLOAT"];
+
     // Render view through twig-template
     echo $twig->render("index.twig", [
+        'loadtime' => $loadtime,
+        'selected' => $pagename,
         'title' =>  $yaml["Title"],
         'nav' => $nav,
-        'content' => $content,
+        'content' => $content
     ])
     
 ?>

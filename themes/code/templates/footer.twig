@@ -1,21 +1,24 @@
 <!-- Footer -->
-<footer class="page_footer">
-    <div class="row">
-        <div class="col3 box">
-            <p>Validering: <a href="http://validator.w3.org/check/referer">HTML</a></p>
-        </div>
-        <div class="col3 box">
-            <a href="https://github.com/Zaccarihas"><i class="fa-brands fa-github"></i></a>
-        </div>
-        <div class="col3 box">
-            <p><?= $weekday ?> <?= $today ?></p>
-            <address>
-                &#128236; <a href="mailto:anders@lofqvist.me">anders@lofqvist.me</a>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col1 final">
-            <p>Sidan är Copyright &copy; av mig</p>
-        </div>
-    </div>
+<footer class="page_footer normal-font">
+    <article class="tools">
+        <h1>Tools and Resources</h1>
+        <ul>
+            <li><a href="http://validator.w3.org/check/referer">W3C - HTML-validator</a></li>
+            <li><a href="https://stackoverflow.com/">Stack Overflow</a></li>
+            <li><a href="https://developer.mozilla.org/en-US/">MDN - Mozilla Developers Network</a></li>
+            <li><a href="https://css-tricks.com/">CSS-tricks</a></li>
+        </ul>
+    </article>
+    <address>
+        <p class="author">Anders Löfqvist &copy; 2023</p>
+        <p>&#128236; <a href="mailto:anders@lofqvist.me">anders@lofqvist.me</a></p>          
+        <a href="https://github.com/Zaccarihas"><i class="fa-brands fa-github"></i></a>
+    </address>
+    <article class="page_metadata">
+        
+        <table class="pagedata">
+            <tr><th scope="row">request ip</th><td>{{ reqip }}</td></tr>
+            <tr><th scope="row">loadtime</th><td>{{ loadtime }}</td></tr>
+        </table>
+    </article>
 </footer>

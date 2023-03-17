@@ -1,34 +1,40 @@
-/** navbar.css */
-
-/* Färg och ramar */
 .navbar {
     background-color: #8892bf;
     border-top: 4px solid #4f5b93;
-    text-align: center;
-    font-size: 1.2em;
+    text-align: right;
+    padding: 0.2rem;
+    color: $darkbottom-color;
+
+    .selected {
+        color: $font-color;
+        font-weight: bold;
+    }
+
+    // Ta bort listmarkeringar marginaler och padding
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    // Lägg listelementen på rad
+    li {
+        display: inline;
+    }
+
+    // Länkar
+    a {
+        display: inline-block;
+        padding: 0.2em 0.5em;
+        text-decoration: none;
+    }
+
+    a:visited {
+        color: inherit;
+    }
+
+    a:hover {
+        border-bottom: 2px solid $darkbottom-color;        
+    }
 }
 
-/* Länkar */
-.navbar a {
-    display: inline-block;
-    padding: 0.2em 0.5em;
-    color: #fff;
-    text-decoration: none;
-}
-
-.navbar a:hover {
-    color: #eee;
-    background-color: #4f5b93;
-}
-
-/* Ta bort listmarkeringar marginaler och padding */
-.navbar ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-
-/* Lägg listelementen på rad */
-.navbar li {
-    display: inline;
-}
