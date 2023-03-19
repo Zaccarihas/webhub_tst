@@ -1,5 +1,5 @@
 <!-- Footer -->
-<footer class="page_footer normal-font">
+<footer class="page-footer normal-font">
     <article class="tools">
         <h1>Tools and Resources</h1>
         <ul>
@@ -14,11 +14,15 @@
         <p>&#128236; <a href="mailto:anders@lofqvist.me">anders@lofqvist.me</a></p>          
         <a href="https://github.com/Zaccarihas"><i class="fa-brands fa-github"></i></a>
     </address>
-    <article class="page_metadata">
-        
+    <article class="page-metadata">        
         <table class="pagedata">
             <tr><th scope="row">request ip</th><td>{{ reqip }}</td></tr>
-            <tr><th scope="row">loadtime</th><td>{{ loadtime }}</td></tr>
+            <tr><th scope="row">loadtime</th><td>{{ loadtime }} ms</td></tr>
+            <tr><th scope="row">number of files</th><td>{{ files }}</td></tr>
+            <tr><th scope="row">current memory usage</th><td>{{ mem.current }}</td></tr>
+            <tr><th scope="row">memory peak usage</th><td>{{ mem.max }}</td></tr>
+            <tr><th scope="row">memory limit</th><td>{{ mem.limit }}</td></tr>
+
         </table>
     </article>
 </footer>

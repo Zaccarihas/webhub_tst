@@ -3,10 +3,9 @@
     border-top: 4px solid #4f5b93;
     text-align: right;
     padding: 0.2rem;
-    color: $darkbottom-color;
 
     .selected {
-        color: $font-color;
+        color: $font-color !important;
         font-weight: bold;
     }
 
@@ -27,10 +26,11 @@
         display: inline-block;
         padding: 0.2em 0.5em;
         text-decoration: none;
+        color: $darkbottom-color
     }
 
     a:visited {
-        color: inherit;
+        color: $darkbottom-color;
     }
 
     a:hover {

@@ -10,6 +10,7 @@ function extract_yaml(&$file) {
     return $yaml;
 };
 
+/*
 function generate_navbar() {
     $contentfolder = __DIR__.'/../content/';
     $nav = "<nav class='navbar'><ul>";
@@ -29,6 +30,7 @@ function generate_navbar() {
     $nav .= "</ul></nav>";
     return $nav;
 };
+*/
 
 function generate_navbar_info() {
     $contentfolder = __DIR__.'/../content/';

@@ -1,4 +1,4 @@
-.page_footer {
+.page-footer {
 
     // Layout of the footer
     display: grid;
@@ -35,7 +35,7 @@
         }
     }
 
-    .page_metadata {
+    .page-metadata {
         grid-area: rightcol;
         justify-self: right;
         align-self: start;
