@@ -54,7 +54,16 @@ function generate_navbar_info($list, $path='') {
 }
 
 function generate_sidebar_info($list, $path='') {
-    $nav = array();
+
+    $nav = [];
+ 
+    $pos = strrpos($path, '/',-2);
+ 
+    if ($pos != null) {
+        $parent = substr($path, 0, $pos)."/";
+        $nav[] = ['url' => $parent."index.md", 'title' => "Tillbaka"];
+    }
+
     foreach($list as $idx => $itm) {
         if(is_array($itm)) {
             $itm = $itm[0].'/index.md';
@@ -71,17 +80,11 @@ function generate_sidebar_info($list, $path='') {
 
 function get_sub_level(&$list, $path) {
 
-    // echo "<hr><br>Incoming: $path";
     $pos = strpos($path, '/');
-    // echo "<br>Pos: $pos";
     if ($pos != null){
         $folder = substr($path, 0, $pos);
         $path = substr($path, $pos+1);
-        // echo "<br>Folder: $folder";
-        // echo "<br>Path: $path";
         foreach ($list as $idx => $itm){
-            // echo "<br>Item: ";
-            //print_r($itm);
             if (is_array($itm) and $itm[0]==$folder) {
                 // is path empty
                 if($path == ""){
