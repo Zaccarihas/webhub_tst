@@ -11,3 +11,6 @@ require_once __DIR__.'/../vendor/autoload.php';
 date_default_timezone_set('Europe/Stockholm');
 $today = date('Y-m-d H:i:s');
 $weekday = date('l');
+
+// Common Constants
+const CONTENT_ROOT = "content/";

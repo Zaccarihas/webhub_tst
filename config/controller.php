@@ -10,46 +10,25 @@ function extract_yaml(&$file) {
     return $yaml;
 };
 
-/*
-function generate_navbar() {
-    $contentfolder = __DIR__.'/../content/';
-    $nav = "<nav class='navbar'><ul>";
-    $subs = scandir($contentfolder);
-    foreach($subs as $sub){
-        if($sub != '.' and $sub != '..') {
-            if(is_dir($contentfolder.$sub)){
-                // Lägg in katalogens index.md titel
-                $sub = $sub."/index.md";
-            }
-            // Extract the title from the file
-            $file_content = file($contentfolder.$sub);
-            $sub_yaml = extract_yaml($file_content);
-            $nav .= "<li><a href='index.php?page=".$sub."'>".$sub_yaml["Title"]."</a></li>";
-        }
-    }
-    $nav .= "</ul></nav>";
-    return $nav;
-};
-*/
-
-function generate_navbar_info() {
-    $contentfolder = __DIR__.'/../content/';
-    // $nav = "<nav class='navbar'><ul>";
-    $subs = scandir($contentfolder);
+function generate_navbar_info($content_folder='') {
+    $content_url = CONTENT_ROOT.$content_folder;
+    $subs = scandir($content_url);
     $nav = array();
     foreach($subs as $sub){
         if($sub != '.' and $sub != '..') {
-            if(is_dir($contentfolder.$sub)){
-                // Lägg in katalogens index.md titel
-                $sub = $sub."/index.md";
+            if ($content_folder == '' or $sub != "index.md") {
+                if(is_dir($content_url.$sub)){
+                    $sub = $sub."/index.md";
+                }
+
+                // Extract the title from the file
+                $file_content = file($content_url.$sub);
+                $sub_yaml = extract_yaml($file_content);
+                $nav[] = [
+                    'url' =>$content_folder.$sub, 
+                    'title' => $sub_yaml["Title"]
+                ];
             }
-            // Extract the title from the file
-            $file_content = file($contentfolder.$sub);
-            $sub_yaml = extract_yaml($file_content);
-            $nav[] = [
-                'url' =>$sub, 
-                'title' => $sub_yaml["Title"]
-            ];
         }
     }
     return $nav;

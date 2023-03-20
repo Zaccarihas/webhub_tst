@@ -1,7 +1,11 @@
 {% extends "templates/base.twig" %}
 
 {% block content %}
-<aside class="sidebar"></aside>
+<aside class="sidebar"><ul>
+    {% for itm in side_nav %}
+        <li><a style="color: black" href="index.php?page={{ itm.url }}">{{ itm.title }}</a></li>
+    {% endfor %}
+</ul></aside>
 
 <main class="grid page-content">
     <div class="top-left">
