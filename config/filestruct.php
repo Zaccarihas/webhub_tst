@@ -23,7 +23,7 @@ function get_folder($url = ''){
                 array_push($list, get_folder($url.'/'.$itm));
                 //array_push($list, [$itm]);
             } else {
-                if ($itm != 'index.html') {
+                if ($itm != 'index.md') {
                     array_push($list, $itm);
                 }
             }
@@ -32,18 +32,3 @@ function get_folder($url = ''){
     return $list;
 }
 
-function create_tree($list){
-    $tree = '<ul>';
-    foreach($list as $itm){
-        $tree .= "<li>";
-        if(is_array($itm)) {
-            // Rekursivt anrop för att skapa subnivå
-            $tree .= create_tree($itm);
-        } else {
-            $tree .= "$itm";
-        }
-        $tree .= "</li>";
-    }
-    $tree .= '</ul>';
-    return $tree;
-}

@@ -7,15 +7,7 @@
     {% endfor %}
 </ul></aside>
 
-<main class="grid page-content">
-    <div class="top-left">
-        Ett huvud för artikeln
-    </div>
-    <div class="top-right">
-        En fot för artikeln
-    </div>
-    <div class="bottom">
-        {{ content|raw }}
-    </div>    
+<main class="page-content">
+    {{ content|raw }}    
 </main>
 {% endblock %}

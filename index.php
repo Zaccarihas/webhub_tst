@@ -32,20 +32,23 @@
     $content = $parsedown->text($page);
 
     // Generate navigation based on current page
-    $nav = generate_navbar_info();
-    
+
+    $list = get_folder('');
+    $nav = generate_navbar_info($list);
+
+    $side_nav = "";
     $sub_url = substr($page_url, 0, strrpos($page_url, "/"));
     
-    $side_nav = '';
     if ($sub_url !== '') {
-        $side_nav = generate_navbar_info("$sub_url/");
+
+        $sub_url .= "/";
+        // Find sublevel in list
+        $sub_list = get_sub_level($list, $sub_url);
+        $side_nav = generate_sidebar_info($sub_list, $sub_url);
+
     }
 
-    // Filestruct solution
-    /*
-    $list = get_folder('');
-    $tree = create_tree($list);
-    */
+   
 
     // Check time to load
     $loadtime = round((microtime(true) - $_SERVER["REQUEST_TIME_FLOAT"])*1000,3);
