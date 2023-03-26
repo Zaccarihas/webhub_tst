@@ -3,7 +3,16 @@
     require('config/config.php');
     require_once('config/controller.php');
     require_once('config/filestruct.php');
+    
 
+    // Check login status
+    $logged_in = isset($_SESSION['loggedin']);
+    
+    $username = "Not Logged In";
+    if($logged_in) {
+        $username = $_SESSION['name'];
+    }
+    
     $theme = 'code';
 
     $loader = new \Twig\Loader\FilesystemLoader("themes/$theme");
@@ -13,6 +22,10 @@
         'cache' => 'themes/shared/templ_cache'
     ]);
     */ 
+
+    // Generate navbar
+    $list = get_folder('');
+    $nav = generate_navbar_info($list);
     
     // Process the requested page
     
@@ -20,7 +33,10 @@
     if (isset($_GET['page'])) {
         $page_url = htmlentities($_GET['page']);
     }
-    //$filename = "content/$page_url";
+    
+
+
+    
     $filename = CONTENT_ROOT.$page_url;
     
     $file = file($filename);     // Read the file
@@ -31,11 +47,7 @@
     $parsedown = new ParsedownExtra();
     $content = $parsedown->text($page);
 
-    // Generate navigation based on current page
-
-    $list = get_folder('');
-    $nav = generate_navbar_info($list);
-
+    // Generate sidebar navigation
     $side_nav = "";
     $sub_url = substr($page_url, 0, strrpos($page_url, "/"));
     
@@ -66,6 +78,8 @@
 
     // Render view through twig-template
     echo $twig->render("index.twig", [
+        'loggedin' => $logged_in,
+        'username' => $username,
         'loadtime' => $loadtime,
         'files' => $numfiles,
         'mem' => $mem,

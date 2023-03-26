@@ -17,7 +17,7 @@ html {
 }
 */
 body {
-  background: #ccc;
+  background: #ddd;
 }
 
 /*!
@@ -10364,31 +10364,38 @@ p {
 }
 /* Set colors, size and prepare positioning */
 .page-header {
+  display: grid;
+  grid-template-columns: 200px auto 300px;
+  grid-template-rows: auto;
+  grid-template-areas: "left-head center-head right-head";
   background-color: #294974;
   border-bottom: 4px solid #ee6c4d;
   position: relative;
 }
-.page-header .logo {
-  width: 150px;
-  position: relative;
-  top: 5px;
-  left: 20px;
+.page-header .page-header-left {
+  grid-area: left-head;
+  justify-self: center;
 }
-.page-header .title {
+.page-header .page-header-left .logo {
+  width: 150px;
+  margin: 15px;
+}
+.page-header .page-header-center {
+  grid-area: center-head;
+  justify-self: left;
+}
+.page-header .page-header-center .title {
+  margin: 15px 0 5px;
   color: #fff;
   font-size: 4em;
   text-shadow: 2px 2px 2px #294974;
-  position: relative;
-  top: -90px;
-  left: 100px;
 }
-.page-header .subtitle {
+.page-header .page-header-center .subtitle {
   color: #4b7bbb;
   font-size: 24px;
-  display: inline-block;
-  position: relative;
-  top: -50px;
-  left: 100px;
+}
+.page-header .page-header-right {
+  grid-area: right-head;
 }
 
 .page-footer {
@@ -10568,4 +10575,56 @@ pre code {
 .page-metadata td {
   padding: 0;
   text-align: right;
+}
+
+.loginform {
+  width: 260px;
+}
+.loginform h1 {
+  color: #4b7bbb;
+  font-size: 1.1em;
+  border-bottom: 1px solid #ee6c4d;
+}
+.loginform form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.loginform form .form-field-block label {
+  color: #4b7bbb;
+}
+.loginform form .form-field-block input[type=password],
+.loginform form .form-field-block input[type=text] {
+  width: 220px;
+  border: 1px solid #ee6c4d;
+  margin-bottom: 10px;
+  padding: 5px;
+}
+.loginform form input[type=submit] {
+  width: 100%;
+  padding: 5px;
+  margin-top: 5px;
+  background-color: #4b7bbb;
+  color: #000;
+  border: 0;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.2s;
+}
+.loginform form input[type=submit]:hover {
+  background-color: #ee6c4d;
+  transition: background-color 0.2s;
+}
+.loginform .userreg {
+  margin: 0;
+  text-align: center;
+  color: #4b7bbb;
+}
+.loginform .userreg a {
+  text-decoration: none;
+  color: #4b7bbb;
+}
+.loginform .userreg a:hover {
+  color: #ee6c4d;
+  transition: color 0.2s;
 }

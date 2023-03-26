@@ -1,6 +1,13 @@
 <!-- Header -->
 <header class="page-header">
-    <img class="logo" src="assetts/img/favicon.png">
-    <span class="title">InfoRepo</span>
-    <span class="subtitle">Min informationsportal</span>
+    <div class="page-header-left">
+        <img class="logo" src="assetts/img/favicon.png">
+    </div>
+    <div class="page-header-center">
+        <div class="title">InfoRepo</div>
+        <div class="subtitle">Min informationsportal</div>
+    </div>
+    <div class="page-header-right">
+        {% include 'templates/loginform.twig' %}
+    </div>
 </header>

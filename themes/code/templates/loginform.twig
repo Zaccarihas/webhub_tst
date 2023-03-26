@@ -1,0 +1,26 @@
+{% if loggedin %}
+    <p class="active-user">{{ username }}</p>
+    <form action="config/logout.php">
+        <input type="submit" value="Logout">
+    </form>
+{% else %}
+    <div class="loginform normal-font">
+        <h1>login</h1>
+        <form action="config/authenticate.php" method="post">
+            <div class="form-field-block">
+                <label for="username"><i class="fas fa-user"></i></label>
+                <input type="text" name="username" placeholder="Username" id="username" required />
+            </div>
+            <div class="form-field-block">
+                <label for="password"><i class="fas fa-lock"></i></label>
+                <input type="password" name="password" placeholder="Password" id="password" required />
+            </div>
+            <input type="submit" value="Login">
+        </form>
+        <p class="userreg"><a href="view/registration.php">Register</a></p>
+    </div>    
+{% endif %}
+
+    
+
+

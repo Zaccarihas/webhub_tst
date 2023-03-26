@@ -1,40 +1,49 @@
 /* Set colors, size and prepare positioning */
 .page-header {
+    display: grid;
+    grid-template-columns: 200px auto 300px;
+    grid-template-rows: auto;
+    grid-template-areas: "left-head center-head right-head";
+
+
     background-color: $darkbottom-color;
     border-bottom: 4px solid $accent-color;
     position: relative;
 
-    // Position and size the logo
-    .logo {
-        width: 150px;
-        position: relative;
-        top: 5px;
-        left: 20px;
-    }
+    .page-header-left {
+        grid-area: left-head;
+        justify-self: center;
 
-    // Modify and poistion the title
-    .title {
-        color: $font-alternative-color;
-        font-size: 4em;
-        text-shadow: 2px 2px 2px $darkbottom-color;
-        position: relative;
-        top: -90px;
-        left: 100px;
-    }
+        // Position and size the logo
+        .logo {
+            width: 150px;
+            margin: 15px;
+        }
 
-    // Modify and position the subtitle.
+    }
     
-    .subtitle {
-        color: $font-meta-color;
-        font-size: 24px;
+    .page-header-center {
+        grid-area: center-head;
+        justify-self: left;
 
-        display: inline-block;
+        // Modify and poistion the title
+        .title {
+            margin: 15px 0 5px;
+            color: $font-alternative-color;
+            font-size: 4em;
+            text-shadow: 2px 2px 2px $darkbottom-color;
+        }
 
-        position: relative;
-        top: -50px;
-        left: 100px;
+        // Modify and position the subtitle.
+        .subtitle {
+            color: $font-meta-color;
+            font-size: 24px;
+        }
     }
 
+    .page-header-right {
+        grid-area: right-head;
+    }
 }
 
 
