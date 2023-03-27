@@ -34,6 +34,7 @@
     
     switch($CONFIG['current_page']) {
         case 'registration':
+            
             $template = 'registration.twig';
             $attributes['title'] = 'Registration';
             $attributes['regpath'] = 'index.php';
