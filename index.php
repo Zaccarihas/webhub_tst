@@ -59,6 +59,3 @@
     }
 
     echo $twig->render($template, $attributes);
-
-    // Process the requested page
-    //include($CONFIG['controllers_folder']).'process_content_page.php';
