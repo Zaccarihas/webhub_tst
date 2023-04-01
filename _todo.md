@@ -7,6 +7,7 @@ To Do
 
 In progress
 ---------------------------------------------------------------------------------------------------
+
 * Fixa auktoriseringsproblemen för GIT på html/nav
 * Sätt upp en ny GIT för secure
 * Gör om till OO och läs på om autoloaders. (jmf med den autoloader som composer redan skapat i vendor. - Kan man ha flera autoloader eller måste jag lägga mina egna klasser under vendor. Kan jag modifiera autoloader under vendor så jag kan lägga mina egna klasser någon annanstans eller måste jag registrera mina klasser enlig paketen på packagist?)
