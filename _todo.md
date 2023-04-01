@@ -7,10 +7,11 @@ To Do
 
 In progress
 ---------------------------------------------------------------------------------------------------
+* Fixa auktoriseringsproblemen för GIT på html/nav
+* Sätt upp en ny GIT för secure
 * Gör om till OO och läs på om autoloaders. (jmf med den autoloader som composer redan skapat i vendor. - Kan man ha flera autoloader eller måste jag lägga mina egna klasser under vendor. Kan jag modifiera autoloader under vendor så jag kan lägga mina egna klasser någon annanstans eller måste jag registrera mina klasser enlig paketen på packagist?)
 * Lägg över de specifika sidkontrollerna för dynamiska sidor till secure
 * Flytta innehållsmappen och config-mappen till websecure
-
 
 
 Backlog
@@ -39,8 +40,11 @@ $twig = new \Twig\Environment($loader, [
 * Snygga till Registration form genom att använda 8pt-metoden för att sätta storleken på fält bl a.
 * Fixa till en lösning för att presentera felmeddelanden från exempelvis en misslyckad registrering av användare (se signup.php)
     * Fixa till så att en misslyckad inloggning hamnar tillbaka på framsidan med ett felmeddelande.
+    * Jämför flash-messages på nätet
+* Göra nya sidan publik på webservern och ersätta Pico-varianten.
 * Lägg in dbit
 * Lägg in inventory
+* Lägg in home maintenance
 * Snygga till returen från authorize_user i authorization.php (inte snyggt med if-sats men jämförelsen med $pos misslyckades).
 * Gör så att navigeringsmenyerna inte tar med sidor som man inte har tillgång till.
 * Snygga till indikeringen för inloggad användare och logout-knappen
@@ -53,6 +57,7 @@ $twig = new \Twig\Environment($loader, [
 * Studera responsiv design via <https://web.dev/learn/design/>
 * Läs och studera boken A beutiful webdesin som finns på nasen.
 * Studera mer om grid layout för websidor
+
 
 Done
 ---------------------------------------------------------------------------------------------------
