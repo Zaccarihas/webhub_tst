@@ -81,7 +81,7 @@
                 $content = $parsedown->text($page);
                 
                 $template = 'index.twig';
-                $attributes['title'] = $yaml["Title"];
+                $attributes['title'] = $yaml["Title"] ?? 'Unset';
                 $attributes['nav'] = $nav;
                 $attributes['side_nav'] = $side_nav;
                 $attributes['content'] = $content;

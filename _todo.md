@@ -10,11 +10,12 @@ In progress
 * Gör om till OO och läs på om autoloaders. (jmf med den autoloader som composer redan skapat i vendor. - Kan man ha flera autoloader eller måste jag lägga mina egna klasser under vendor. Kan jag modifiera autoloader under vendor så jag kan lägga mina egna klasser någon annanstans eller måste jag registrera mina klasser enlig paketen på packagist?)
 * Lägg över de specifika sidkontrollerna för dynamiska sidor till secure
 * Flytta innehållsmappen och config-mappen till websecure
-* Flytta innehåll från nuvarande Pico-sida till den nya sidan.
+
 
 
 Backlog
 ---------------------------------------------------------------------------------------------------
+* Gör en named session istället för en unnamed.
 * Fixa till styling för sidebar
 * Skapa en RESTful router
 * Sätt up en adminsida där man kan godkänna användare (active), ändar användaruppgifter, ta bort användare  och ändra lösenord.
@@ -43,9 +44,20 @@ $twig = new \Twig\Environment($loader, [
 * Snygga till returen från authorize_user i authorization.php (inte snyggt med if-sats men jämförelsen med $pos misslyckades).
 * Gör så att navigeringsmenyerna inte tar med sidor som man inte har tillgång till.
 * Snygga till indikeringen för inloggad användare och logout-knappen
+* Beskriv css-enheter så som em, ex, px, pt, %, vw, rem etc
+* Beskriv de globala egenskapsvärdena inherit, initial, revert, revert-layer och unset
+* Studera layoutmetoden float och beskriv den (inkl clearfix)
+* Kolla upp layout-teknik med spalter och 16-delar och beskriv detta
+* Studera verktygen för webdesign: Colorzilla, Figma och Adobe XD
+* Studera Typography Handbook på nätet.
+* Studera responsiv design via <https://web.dev/learn/design/>
+* Läs och studera boken A beutiful webdesin som finns på nasen.
+* Studera mer om grid layout för websidor
 
 Done
 ---------------------------------------------------------------------------------------------------
+* Flytta innehåll från nuvarande Pico-sida till den nya sidan.
+
 * Lägg till inloggning och auktorisering
     * Fixa inloggningsformulär
     * Skapa registration form
