@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "lint": "stylelint \"**/*.scss\"",
-    "style": "sass code/scss/style.scss code/style.css --no-source-map",
-    "style-min": "sass code/scss/style.scss code/style.css --no-source-map --style compressed",
+    "style": "sass default/scss/style.scss default/style.css --no-source-map",
+    "style-min": "sass default/scss/style.scss default/style.css --no-source-map --style compressed",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

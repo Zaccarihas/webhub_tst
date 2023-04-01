@@ -10628,3 +10628,26 @@ pre code {
   color: #ee6c4d;
   transition: color 0.2s;
 }
+
+.signupform {
+  width: 600px;
+  margin: 1.2rem;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+.signupform .formfield {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: auto;
+  grid-template-areas: "label field";
+}
+.signupform .formfield label {
+  grid-area: label;
+  justify-self: stretch;
+}
+.signupform .formfield input {
+  grid-area: field;
+  justify-self: stretch;
+}

@@ -11,7 +11,7 @@
         exit ('Please fill both the username and password fields!');
     }
 
-    if($stm = $conn->prepare('SELECT id, password FROM users WHERE username = ?')) {
+    if($stm = $conn->prepare('SELECT id, password FROM users WHERE username = ? AND active = 1')) {
         $stm->bind_param('s', $_POST['username']);
         $stm->execute();
         $stm->store_result();
