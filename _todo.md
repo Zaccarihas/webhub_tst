@@ -8,8 +8,6 @@ To Do
 In progress
 ---------------------------------------------------------------------------------------------------
 
-* Lägg över de specifika sidkontrollerna för dynamiska sidor till secure
-    * Signup fungerar inte. Registrering av nya användare fungerar men authorizer släpper inte igenom med deras lösenord.
 * Flytta innehållsmappen och config-mappen till websecure
 * Lägg över vendor-mappen till secure
     * se till att det går att skapa CSS-filen i public
@@ -46,6 +44,7 @@ $twig = new \Twig\Environment($loader, [
 * Göra nya sidan publik på webservern och ersätta Pico-varianten.
 
 ### Version 2.0
+* Skapa en ny förgrening (fork) i git för den nya versionen
 * Gör om todo-list till en databaslista som kan hanteras via hemsidan.
 * Snygga till Registration form genom att använda 8pt-metoden för att sätta storleken på fält bl a.
 * Gör ett helt nytt tema (mer modernt - utan klassiskt sidhuvud och sidfot) och testa att växla mellan de olika temorna
@@ -83,6 +82,10 @@ $twig = new \Twig\Environment($loader, [
 
 Done
 ---------------------------------------------------------------------------------------------------
+### 2023-04-09
+* Lägg över de specifika sidkontrollerna för dynamiska sidor till secure
+    * Signup fungerar inte. Registrering av nya användare fungerar men authorizer släpper inte igenom med deras lösenord. - Man måste atkivera användaren först
+
 ### 2023-04-08
 * Gör om till OOP och läs på om autoloaders. (jmf med den autoloader som composer redan skapat i vendor. - Kan man ha flera autoloader eller måste jag lägga mina egna klasser under vendor. Kan jag modifiera autoloader under vendor så jag kan lägga mina egna klasser någon annanstans eller måste jag registrera mina klasser enlig paketen på packagist?)
     * Gör en abstrakt klass navigation som innehåller get_folder och låt cls_navbar ärva den abstrakta klassen.
