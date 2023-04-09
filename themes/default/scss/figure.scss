@@ -1,0 +1,18 @@
+.figure {
+
+    display: inline-block;
+    margin: 0;
+    padding: 0.5em;
+    border: 1px solid $background-alternative-color;
+
+    img {
+        max-width: 100%;
+    }
+
+    figcaption {
+        caption-side: bottom;
+        font-style: italic;
+        padding-top: 1em;
+    }
+
+}

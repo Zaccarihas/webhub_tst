@@ -1,0 +1,40 @@
+.navbar {
+    background-color: #8892bf;
+    border-top: 4px solid #4f5b93;
+    text-align: right;
+    padding: 0.2rem;
+
+    .selected {
+        color: $font-color !important;
+        font-weight: bold;
+    }
+
+    // Ta bort listmarkeringar marginaler och padding
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    // Lägg listelementen på rad
+    li {
+        display: inline;
+    }
+
+    // Länkar
+    a {
+        display: inline-block;
+        padding: 0.2em 0.5em;
+        text-decoration: none;
+        color: $darkbottom-color
+    }
+
+    a:visited {
+        color: $darkbottom-color;
+    }
+
+    a:hover {
+        border-bottom: 2px solid $darkbottom-color;        
+    }
+}
+
