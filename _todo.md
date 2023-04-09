@@ -7,15 +7,14 @@ To Do
 
 In progress
 ---------------------------------------------------------------------------------------------------  
-* Gör en named session istället för en unnamed.
+* Fixa till styling för sidebar
+* Fixa sidonavigeringen. Det måste vara möjligt att återgå till mappens index.md samt att hoppa upp till överställd mapps index.md
+* Gör så att navigeringsmenyerna inte tar med sidor som man inte har tillgång till.
 
 Backlog
 ---------------------------------------------------------------------------------------------------
 
 ### Published version 1.0 online
-* Fixa till styling för sidebar
-* Fixa sidonavigeringen. Det måste vara möjligt att återgå till mappens index.md samt att hoppa upp till överställd mapps index.md
-* Gör så att navigeringsmenyerna inte tar med sidor som man inte har tillgång till.
 * Skapa en RESTful router (jmf rewritetest-mappen på local)
 * Läs på mer om Twig envirenment och hur man använder cache
 ~~~
@@ -87,6 +86,7 @@ Done
     * se till att det går att skapa twig-utskriften från secure
     * Ta bort templates-mappen under themes från public
     * Jag valde att ha kvar stilmallsgenereringen på public eftersom mycket av stilmallen ändå måste ligga kvar där. Twig-mallarna ligger dock under secure.
+* Gör en named session istället för en unnamed.
 
 ### 2023-04-08
 * Gör om till OOP och läs på om autoloaders. (jmf med den autoloader som composer redan skapat i vendor. - Kan man ha flera autoloader eller måste jag lägga mina egna klasser under vendor. Kan jag modifiera autoloader under vendor så jag kan lägga mina egna klasser någon annanstans eller måste jag registrera mina klasser enlig paketen på packagist?)
