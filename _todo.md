@@ -9,7 +9,9 @@ In progress
 ---------------------------------------------------------------------------------------------------  
 * Fixa till styling för sidebar
     * Gör en hover-effekt på menyvalen
-* Fixa sidonavigeringen. Det måste vara möjligt att återgå till mappens index.md samt att hoppa upp till överställd mapps index.md
+    * Fixa färgen på länkarna
+    * Styla backlink på ett annat sätt
+    * Styla summeringssidan (index.md) på ett annat sätt (understruken kanske)
 * Gör så att menyn visas även på sidor som man inte är behörig till.
 * Gör så att navigeringsmenyerna inte tar med sidor som man inte har tillgång till.
 * Gör kursmoment webtec 06 - PHP, PDO och SQL
@@ -19,6 +21,7 @@ Backlog
 
 ### Published version 1.0 online
 * Skapa en RESTful router (jmf rewritetest-mappen på local)
+    * Se till att navigeringen använder url istället för filsökvägar
 * Läs på mer om Twig envirenment och hur man använder cache
 ~~~
 $twig = new \Twig\Environment($loader, [
@@ -47,6 +50,7 @@ $twig = new \Twig\Environment($loader, [
 * Gör kursmoment desing 04 - Färg
 * Gör kursmoment design 05 - Bild
 * Repetera kursmoment design 03 - Layout
+* Utred hur dynamiska sidor ska hanteras. Ska de representeras av en md-fil med bara config-delen? Ska de ha en egen klass DynamicPage. Hur kan man nästla in statiska och dynamiska sidor i samma navigering.
 * Läs på om autoloaders. (jmf med den autoloader som composer redan skapat i vendor. - Kan man ha flera autoloader eller måste jag lägga mina egna klasser under vendor. Kan jag modifiera autoloader under vendor så jag kan lägga mina egna klasser någon annanstans eller måste jag registrera mina klasser enlig paketen på packagist?)
 * Gör en flernivåslista för navigering där man kan expandera och navigera sig i ett träd.
 * Gör om todo-list till en databaslista som kan hanteras via hemsidan.
@@ -57,6 +61,7 @@ $twig = new \Twig\Environment($loader, [
 * Gör en logg för varje användare över vilka ip de brukar ansluta från. 
     * Låt användaren bestämma om endast betrodda ip-nummer får användas för uppkoppling eller om användaren vill ha en varning med möjlighet till utloggning och spärr om inloggning sker från okänt ip-nummer.
 * Se serien Udamy Clone på youtube
+* Utred om man kan skapa taxonomies som sen kan ligga till grund för speciell navigering
 * Skapa en blogg funktion
 * Lägg in funktionalitet för att ladda upp filer till servern (jmf inventory)
 * Skapa ett forum med PHP-forum
@@ -92,6 +97,9 @@ $twig = new \Twig\Environment($loader, [
 
 Done
 ---------------------------------------------------------------------------------------------------
+### 2023-04-11
+* Fixa sidonavigeringen. Det måste vara möjligt att återgå till mappens index.md samt att hoppa upp till överställd mapps index.md
+
 ### 2023-04-09
 * Lägg över de specifika sidkontrollerna för dynamiska sidor till secure
     * Signup fungerar inte. Registrering av nya användare fungerar men authorizer släpper inte igenom med deras lösenord. - Man måste atkivera användaren först
