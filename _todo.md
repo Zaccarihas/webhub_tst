@@ -8,8 +8,11 @@ To Do
 In progress
 ---------------------------------------------------------------------------------------------------  
 * Fixa till styling för sidebar
+    * Gör en hover-effekt på menyvalen
 * Fixa sidonavigeringen. Det måste vara möjligt att återgå till mappens index.md samt att hoppa upp till överställd mapps index.md
+* Gör så att menyn visas även på sidor som man inte är behörig till.
 * Gör så att navigeringsmenyerna inte tar med sidor som man inte har tillgång till.
+* Gör kursmoment webtec 06 - PHP, PDO och SQL
 
 Backlog
 ---------------------------------------------------------------------------------------------------
@@ -23,15 +26,17 @@ $twig = new \Twig\Environment($loader, [
 ]);
 ~~~
 * Ändra storlek på ikonen 
+* Snygga till indikeringen för inloggad användare och logout-knappen
 * Gör om databaskopplingen så den använder pdo-rutiner istället för mysqli (authentication jmf med signup.php)
 * Fixa till en lösning för att presentera felmeddelanden från exempelvis en misslyckad registrering av användare (se signup.php)
     * Fixa till så att en misslyckad inloggning hamnar tillbaka på framsidan med ett felmeddelande.
     * Jämför flash-messages på nätet
-* Fixa stylesheet så att kodrutor håller sig inom överställt objekt
+* Fixa stylesheet så att kodrutor håller sig inom överställt objekt (jmf SQL lite sidan)
 * Kolla upp layout-teknik med spalter och 16-delar och beskriv detta
 * Anpassa sida för mobil
 * Anpassa sida för bredare skärmar som tar tillvara mer av ytan.
 * Göra nya sidan publik på webservern och ersätta Pico-varianten.
+* Gör så att cls_site använder StaticPage-klassen för default-sidorna.
 
 ### Version 1.1
 * Sätt up en adminsida där man kan godkänna användare (active), ändra användaruppgifter, ta bort användare  och ändra lösenord.
@@ -39,6 +44,11 @@ $twig = new \Twig\Environment($loader, [
 
 ### Version 2.0
 * Skapa en ny förgrening (fork) i git för den nya versionen
+* Gör kursmoment desing 04 - Färg
+* Gör kursmoment design 05 - Bild
+* Repetera kursmoment design 03 - Layout
+* Läs på om autoloaders. (jmf med den autoloader som composer redan skapat i vendor. - Kan man ha flera autoloader eller måste jag lägga mina egna klasser under vendor. Kan jag modifiera autoloader under vendor så jag kan lägga mina egna klasser någon annanstans eller måste jag registrera mina klasser enlig paketen på packagist?)
+* Gör en flernivåslista för navigering där man kan expandera och navigera sig i ett träd.
 * Gör om todo-list till en databaslista som kan hanteras via hemsidan.
 * Snygga till Registration form genom att använda 8pt-metoden för att sätta storleken på fält bl a.
 * Gör ett helt nytt tema (mer modernt - utan klassiskt sidhuvud och sidfot) och testa att växla mellan de olika temorna
@@ -54,7 +64,6 @@ $twig = new \Twig\Environment($loader, [
 * Lägg in inventory
 * Lägg in home maintenance
 * Snygga till returen från authorize_user i authorization.php (inte snyggt med if-sats men jämförelsen med $pos misslyckades).
-* Snygga till indikeringen för inloggad användare och logout-knappen
 * Beskriv css-enheter så som em, ex, px, pt, %, vw, rem etc
 * Beskriv de globala egenskapsvärdena inherit, initial, revert, revert-layer och unset
 * Studera layoutmetoden float och beskriv den (inkl clearfix)
@@ -64,10 +73,21 @@ $twig = new \Twig\Environment($loader, [
 * Läs och studera boken A beutiful webdesin som finns på nasen.
 * Studera mer om grid layout för websidor
 * Studera kryptering. vad är skillnaden mellan rsa, escd, etc. Hur fungerar ssh och keychain
-* I ParseExtra i vendor-mappen används en utgången funktion mb_convert_encoding. Här: <https://stackoverflow.com/questions/11974008/alternative-to-mb-convert-encoding-with-html-entities-charset> beskrivs ett alternativt sätt men jag vet inte om jag vill uppdatera filer som jag installerat via composer `(htmlspecialchars_decode(utf8_decode(htmlentities($string, ENT_COMPAT, 'utf-8', false)));)`
+* I ParseExtra i vendor-mappen används en utgången funktion mb_convert_encoding. Här: <https://stackoverflow.com/questions/11974008/alternative-to-mb-convert-encoding-with-html-entities-charset> beskrivs ett alternativt sätt men jag vet inte om jag vill uppdatera filer som jag installerat via composer `(htmlspecialchars_decode(utf8_decode(htmlentities($string, ENT_COMPAT, 'utf-8', false)));)`. (Felmeddelandet dyker på sidan SQLite)
 * Testa drag and drop funktion på någon sida (ev en kanban-sida för uppgifter)
 * Utvärdera och testa lite css-animationer och effekter till sidan
 * Lägg över pdotest.php till en generell site (typ secure) och ta bort från huvudmappen (ingår inte i siten utan är ett generellt verktyg för att kontrollera databaskopplingen)
+* Gör en pomodoro-klocka till hemsidan
+* Gör en internet-tid-klocka till sidan.
+* Gör kursmoment js 01 - Utvecklingsmiljö och grunder
+* Gör kursmoment js 02 - moduler
+* Gör kursmoment js 03 - DOM och events
+* Gör kursmoment js 04 - webpack
+* Gör kursmoment js 05 - WebAPI
+* Gör kursmoment js 04 - Objekt
+* Strukturera om så att underlaget under secure kan användas för flera siter. Exempelvis lägg controllers under en shared-mapp och endast site unika controllers under site-mapparna. För att detta ska fungera måste new Site anropas med vilken site som ska skapas och mappar som exempelvis content_folder kan inte beräknas från Site-klassfilens fysiska position.
+
+
 
 
 Done
@@ -89,7 +109,7 @@ Done
 * Gör en named session istället för en unnamed.
 
 ### 2023-04-08
-* Gör om till OOP och läs på om autoloaders. (jmf med den autoloader som composer redan skapat i vendor. - Kan man ha flera autoloader eller måste jag lägga mina egna klasser under vendor. Kan jag modifiera autoloader under vendor så jag kan lägga mina egna klasser någon annanstans eller måste jag registrera mina klasser enlig paketen på packagist?)
+* Gör om till OOP
     * Gör en abstrakt klass navigation som innehåller get_folder och låt cls_navbar ärva den abstrakta klassen.
     * Gör en cls_sidebar som också ärver navigation* Flytta innehållsmappen och config-mappen till websecure
     * Gör en klass för authorization.php

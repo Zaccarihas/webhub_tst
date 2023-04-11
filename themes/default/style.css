@@ -10484,8 +10484,10 @@ p {
 .sidebar {
   padding: 1rem;
   font-size: 0.9em;
+  min-width: 150px;
 }
 .sidebar ul {
+  padding: 0px;
   list-style-type: none;
 }
 .sidebar a {
