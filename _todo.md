@@ -7,14 +7,17 @@ To Do
 
 In progress
 ---------------------------------------------------------------------------------------------------  
-* Fixa till styling för sidebar
-    * Gör en hover-effekt på menyvalen
-    * Fixa färgen på länkarna
-    * Styla backlink på ett annat sätt
-    * Styla summeringssidan (index.md) på ett annat sätt (understruken kanske)
-* Gör så att menyn visas även på sidor som man inte är behörig till.
-* Gör så att navigeringsmenyerna inte tar med sidor som man inte har tillgång till.
+* Rensa bort klasser, filer och kod som inte används (ex cls_navbar och cls_sidebar)
 * Gör kursmoment webtec 06 - PHP, PDO och SQL
+* Gör kursmoment desing 04 - Färg
+* Gör kursmoment design 05 - Bild
+* Repetera kursmoment design 03 - Layout
+* Fixa stylesheet så att kodrutor håller sig inom överställt objekt (jmf SQL lite sidan)
+* Gör sidorna mer läsbara genom att justera typsnitt i exempelvis listor.
+* Kolla upp layout-teknik med spalter och 16-delar och beskriv detta
+* Anpassa sida för mobil
+* Anpassa sida för bredare skärmar som tar tillvara mer av ytan.
+
 
 Backlog
 ---------------------------------------------------------------------------------------------------
@@ -22,24 +25,18 @@ Backlog
 ### Published version 1.0 online
 * Skapa en RESTful router (jmf rewritetest-mappen på local)
     * Se till att navigeringen använder url istället för filsökvägar
+* Gör om databaskopplingen så den använder pdo-rutiner istället för mysqli (authentication jmf med signup.php)
+* Fixa till en lösning för att presentera felmeddelanden från exempelvis en misslyckad registrering av användare (se signup.php)
+    * Fixa till så att en misslyckad inloggning hamnar tillbaka på framsidan med ett felmeddelande.
+    * Jämför flash-messages på nätet
+* Gör så att cls_site använder StaticPage-klassen för default-sidorna.
 * Läs på mer om Twig envirenment och hur man använder cache
 ~~~
 $twig = new \Twig\Environment($loader, [
     'cache' => 'themes/shared/templ_cache'
 ]);
 ~~~
-* Ändra storlek på ikonen 
-* Snygga till indikeringen för inloggad användare och logout-knappen
-* Gör om databaskopplingen så den använder pdo-rutiner istället för mysqli (authentication jmf med signup.php)
-* Fixa till en lösning för att presentera felmeddelanden från exempelvis en misslyckad registrering av användare (se signup.php)
-    * Fixa till så att en misslyckad inloggning hamnar tillbaka på framsidan med ett felmeddelande.
-    * Jämför flash-messages på nätet
-* Fixa stylesheet så att kodrutor håller sig inom överställt objekt (jmf SQL lite sidan)
-* Kolla upp layout-teknik med spalter och 16-delar och beskriv detta
-* Anpassa sida för mobil
-* Anpassa sida för bredare skärmar som tar tillvara mer av ytan.
 * Göra nya sidan publik på webservern och ersätta Pico-varianten.
-* Gör så att cls_site använder StaticPage-klassen för default-sidorna.
 
 ### Version 1.1
 * Sätt up en adminsida där man kan godkänna användare (active), ändra användaruppgifter, ta bort användare  och ändra lösenord.
@@ -47,9 +44,6 @@ $twig = new \Twig\Environment($loader, [
 
 ### Version 2.0
 * Skapa en ny förgrening (fork) i git för den nya versionen
-* Gör kursmoment desing 04 - Färg
-* Gör kursmoment design 05 - Bild
-* Repetera kursmoment design 03 - Layout
 * Utred hur dynamiska sidor ska hanteras. Ska de representeras av en md-fil med bara config-delen? Ska de ha en egen klass DynamicPage. Hur kan man nästla in statiska och dynamiska sidor i samma navigering.
 * Läs på om autoloaders. (jmf med den autoloader som composer redan skapat i vendor. - Kan man ha flera autoloader eller måste jag lägga mina egna klasser under vendor. Kan jag modifiera autoloader under vendor så jag kan lägga mina egna klasser någon annanstans eller måste jag registrera mina klasser enlig paketen på packagist?)
 * Gör en flernivåslista för navigering där man kan expandera och navigera sig i ett träd.
@@ -92,11 +86,19 @@ $twig = new \Twig\Environment($loader, [
 * Gör kursmoment js 04 - Objekt
 * Strukturera om så att underlaget under secure kan användas för flera siter. Exempelvis lägg controllers under en shared-mapp och endast site unika controllers under site-mapparna. För att detta ska fungera måste new Site anropas med vilken site som ska skapas och mappar som exempelvis content_folder kan inte beräknas från Site-klassfilens fysiska position.
 
-
-
-
 Done
 ---------------------------------------------------------------------------------------------------
+### 2023-04-12
+* Snygga till indikeringen för inloggad användare och logout-knappen
+* Ändra storlek på ikonen 
+* Gör så att navigeringsmenyerna inte tar med sidor som man inte har tillgång till.
+* Fixa till styling för sidebar
+    * Gör en hover-effekt på menyvalen
+    * Fixa färgen på länkarna
+    * Styla backlink på ett annat sätt
+    * Styla summeringssidan (index.md) på ett annat sätt (understruken kanske)
+* Gör så att menyn visas även på sidor som man inte är behörig till.
+
 ### 2023-04-11
 * Fixa sidonavigeringen. Det måste vara möjligt att återgå till mappens index.md samt att hoppa upp till överställd mapps index.md
 

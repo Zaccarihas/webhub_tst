@@ -1,0 +1,23 @@
+.active_user_panel {
+    width: 150px;
+   
+    display: flex;
+    flex-flow: column nowrap;
+
+    padding: 1rem;
+
+    .active-user {
+
+        color: $logo-color;
+        
+        .active-user-name {
+            display: inline;
+            margin-left: 1rem;
+        }
+
+    }
+    
+
+}
+
+

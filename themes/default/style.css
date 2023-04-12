@@ -10396,6 +10396,9 @@ p {
 }
 .page-header .page-header-right {
   grid-area: right-head;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: flex-end;
 }
 
 .page-footer {
@@ -10493,6 +10496,19 @@ p {
 .sidebar a {
   text-decoration: none;
 }
+.sidebar .backlink {
+  margin-left: 0.2rem;
+}
+.sidebar .sidenav a:link,
+.sidebar .sidenav a:visited {
+  color: black;
+}
+.sidebar .sidenav a:hover {
+  color: #ee6c4d;
+}
+.sidebar .sidenav li:first-of-type {
+  border-bottom: 1px solid #ee6c4d;
+}
 
 blockquote {
   font-style: italic;
@@ -10581,6 +10597,7 @@ pre code {
 
 .loginform {
   width: 260px;
+  margin-right: 2rem;
 }
 .loginform h1 {
   color: #4b7bbb;
@@ -10629,6 +10646,20 @@ pre code {
 .loginform .userreg a:hover {
   color: #ee6c4d;
   transition: color 0.2s;
+}
+
+.active_user_panel {
+  width: 150px;
+  display: flex;
+  flex-flow: column nowrap;
+  padding: 1rem;
+}
+.active_user_panel .active-user {
+  color: #dd9700;
+}
+.active_user_panel .active-user .active-user-name {
+  display: inline;
+  margin-left: 1rem;
 }
 
 .signupform {

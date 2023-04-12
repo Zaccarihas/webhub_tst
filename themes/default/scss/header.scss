@@ -43,6 +43,9 @@
 
     .page-header-right {
         grid-area: right-head;
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: flex-end;
     }
 }
 

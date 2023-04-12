@@ -13,5 +13,25 @@
         text-decoration: none;
     }
 
+    .backlink {
+        margin-left: 0.2rem;
+    }
+
+    .sidenav {
+
+        a:link,
+        a:visited {
+            color: black;
+        }
+
+        a:hover {
+            color: $accent-color;
+        }
+
+        li:first-of-type {
+            border-bottom: 1px solid $accent-color;
+        }
+    }
+
 
 }
