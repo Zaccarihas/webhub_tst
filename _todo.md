@@ -7,14 +7,14 @@ To Do
 
 In progress
 ---------------------------------------------------------------------------------------------------  
-* Rensa bort klasser, filer och kod som inte används (ex cls_navbar och cls_sidebar)
+
 * Gör kursmoment webtec 06 - PHP, PDO och SQL
 * Gör kursmoment desing 04 - Färg
 * Gör kursmoment design 05 - Bild
 * Repetera kursmoment design 03 - Layout
+* Kolla upp layout-teknik med spalter och 16-delar och beskriv detta
 * Fixa stylesheet så att kodrutor håller sig inom överställt objekt (jmf SQL lite sidan)
 * Gör sidorna mer läsbara genom att justera typsnitt i exempelvis listor.
-* Kolla upp layout-teknik med spalter och 16-delar och beskriv detta
 * Anpassa sida för mobil
 * Anpassa sida för bredare skärmar som tar tillvara mer av ytan.
 
@@ -40,6 +40,8 @@ $twig = new \Twig\Environment($loader, [
 
 ### Version 1.1
 * Sätt up en adminsida där man kan godkänna användare (active), ändra användaruppgifter, ta bort användare  och ändra lösenord.
+
+### Version 1.2
 * Skapa en online md-editor
 
 ### Version 2.0
@@ -51,6 +53,7 @@ $twig = new \Twig\Environment($loader, [
 * Snygga till Registration form genom att använda 8pt-metoden för att sätta storleken på fält bl a.
 * Gör ett helt nytt tema (mer modernt - utan klassiskt sidhuvud och sidfot) och testa att växla mellan de olika temorna
 * Gör en profilsida för inloggad användare (kanske en privat (dold) och en publik).
+    * Gör en byline som kan visas vid dokument och inläggg som användaren har skapat
 * Presentera anropande ip-nummer
 * Gör en logg för varje användare över vilka ip de brukar ansluta från. 
     * Låt användaren bestämma om endast betrodda ip-nummer får användas för uppkoppling eller om användaren vill ha en varning med möjlighet till utloggning och spärr om inloggning sker från okänt ip-nummer.
@@ -88,6 +91,9 @@ $twig = new \Twig\Environment($loader, [
 
 Done
 ---------------------------------------------------------------------------------------------------
+### 2023-04-13
+* Rensa bort klasser, filer och kod som inte används (ex cls_navbar och cls_sidebar)
+
 ### 2023-04-12
 * Snygga till indikeringen för inloggad användare och logout-knappen
 * Ändra storlek på ikonen 
