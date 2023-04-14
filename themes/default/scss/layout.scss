@@ -27,9 +27,9 @@
 .page-content {
     grid-column: 2 / 3;
     grid-row: 3 / 3;
-    grid-template-areas: 'top-left top-right' 'bottom bottom';
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 25px;
+    //grid-template-areas: 'top-left top-right' 'bottom bottom';
+    //grid-template-columns: repeat(2, 1fr);
+    //grid-gap: 25px;
 
     .bottom {
         grid-area: bottom;

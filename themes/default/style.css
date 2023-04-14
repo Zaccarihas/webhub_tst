@@ -10336,9 +10336,6 @@ p {
 .page-content {
   grid-column: 2/3;
   grid-row: 3/3;
-  grid-template-areas: "top-left top-right" "bottom bottom";
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 25px;
 }
 .page-content .bottom {
   grid-area: bottom;
@@ -10508,6 +10505,10 @@ p {
 }
 .sidebar .sidenav li:first-of-type {
   border-bottom: 1px solid #ee6c4d;
+}
+
+.page-content {
+  padding: 2rem;
 }
 
 blockquote {

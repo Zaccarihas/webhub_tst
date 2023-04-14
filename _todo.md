@@ -7,44 +7,41 @@ To Do
 
 In progress
 ---------------------------------------------------------------------------------------------------  
-
-* Gör kursmoment webtec 06 - PHP, PDO och SQL
-* Gör kursmoment desing 04 - Färg
-* Gör kursmoment design 05 - Bild
-* Repetera kursmoment design 03 - Layout
-* Kolla upp layout-teknik med spalter och 16-delar och beskriv detta
-* Fixa stylesheet så att kodrutor håller sig inom överställt objekt (jmf SQL lite sidan)
-* Gör sidorna mer läsbara genom att justera typsnitt i exempelvis listor.
-* Anpassa sida för mobil
-* Anpassa sida för bredare skärmar som tar tillvara mer av ytan.
-
+* Skapa en RESTful router (jmf rewritetest-mappen på local)
+    * Se till att navigeringen använder url istället för filsökvägar
 
 Backlog
 ---------------------------------------------------------------------------------------------------
 
 ### Published version 1.0 online
-* Skapa en RESTful router (jmf rewritetest-mappen på local)
-    * Se till att navigeringen använder url istället för filsökvägar
 * Gör om databaskopplingen så den använder pdo-rutiner istället för mysqli (authentication jmf med signup.php)
 * Fixa till en lösning för att presentera felmeddelanden från exempelvis en misslyckad registrering av användare (se signup.php)
     * Fixa till så att en misslyckad inloggning hamnar tillbaka på framsidan med ett felmeddelande.
     * Jämför flash-messages på nätet
 * Gör så att cls_site använder StaticPage-klassen för default-sidorna.
+* Döp om sidan till webhub och hitta på en ny underrubrik
+* Göra nya sidan publik på webservern och ersätt Pico-varianten.
+
+### Version 1.1
+* Sätt up en adminsida där man kan godkänna användare (active), ändra användaruppgifter, ta bort användare  och ändra lösenord.
+* Gör kursmoment desing 04 - Färg
+* Gör kursmoment design 05 - Bild
+* Repetera kursmoment design 03 - Layout
+* Kolla upp layout-teknik med spalter och 16-delar och beskriv detta
+* Anpassa sida för mobil
+* Anpassa sida för bredare skärmar som tar tillvara mer av ytan.
+
+### Version 1.2
+* Skapa en online md-editor
+
+### Version 2.0
 * Läs på mer om Twig envirenment och hur man använder cache
 ~~~
 $twig = new \Twig\Environment($loader, [
     'cache' => 'themes/shared/templ_cache'
 ]);
 ~~~
-* Göra nya sidan publik på webservern och ersätta Pico-varianten.
-
-### Version 1.1
-* Sätt up en adminsida där man kan godkänna användare (active), ändra användaruppgifter, ta bort användare  och ändra lösenord.
-
-### Version 1.2
-* Skapa en online md-editor
-
-### Version 2.0
+* Skicka inte med databasuppgifterna i session. Uppkopplingsdata hårdkodas in i varje controller.
 * Skapa en ny förgrening (fork) i git för den nya versionen
 * Utred hur dynamiska sidor ska hanteras. Ska de representeras av en md-fil med bara config-delen? Ska de ha en egen klass DynamicPage. Hur kan man nästla in statiska och dynamiska sidor i samma navigering.
 * Läs på om autoloaders. (jmf med den autoloader som composer redan skapat i vendor. - Kan man ha flera autoloader eller måste jag lägga mina egna klasser under vendor. Kan jag modifiera autoloader under vendor så jag kan lägga mina egna klasser någon annanstans eller måste jag registrera mina klasser enlig paketen på packagist?)
@@ -91,6 +88,12 @@ $twig = new \Twig\Environment($loader, [
 
 Done
 ---------------------------------------------------------------------------------------------------
+
+### 2023-04-14
+* Gör sidorna mer läsbara genom att justera typsnitt i exempelvis listor
+* Fixa stylesheet så att kodrutor håller sig inom överställt objekt (jmf SQL lite sidan)
+* Gör kursmoment webtec 06 - PHP, PDO och SQL
+
 ### 2023-04-13
 * Rensa bort klasser, filer och kod som inte används (ex cls_navbar och cls_sidebar)
 
