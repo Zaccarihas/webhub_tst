@@ -1,15 +1,14 @@
 --- 
 In progress
 ---------------------------------------------------------------------------------------------------  
-* Gör om databaskopplingen så den använder pdo-rutiner istället för mysqli (authentication jmf med signup.php)
+* Fixa till en lösning för att presentera felmeddelanden från exempelvis en misslyckad registrering av användare (se signup.php)
+    * Fixa till så att en misslyckad inloggning hamnar tillbaka på framsidan med ett felmeddelande.
+    * Jämför flash-messages på nätet
 
 Backlog
 ---------------------------------------------------------------------------------------------------
 
 ### Published version 1.0 online
-* Fixa till en lösning för att presentera felmeddelanden från exempelvis en misslyckad registrering av användare (se signup.php)
-    * Fixa till så att en misslyckad inloggning hamnar tillbaka på framsidan med ett felmeddelande.
-    * Jämför flash-messages på nätet
 * Gör så att cls_site använder StaticPage-klassen för default-sidorna.
 * Döp om sidan till webhub och hitta på en ny underrubrik
 * Göra nya sidan publik på webservern och ersätt Pico-varianten.
@@ -41,6 +40,7 @@ $twig = new \Twig\Environment($loader, [
 * Anpassa sida för bredare skärmar som tar tillvara mer av ytan.
 
 ### Version 1.3
+* Refactor och skapa mer OOP i befintliga klasser
 * Skapa en online md-editor
 * Gör en flernivåslista för navigering där man kan expandera och navigera sig i ett träd.
 
@@ -70,19 +70,27 @@ $twig = new \Twig\Environment($loader, [
 * Testa drag and drop funktion på någon sida (ev en kanban-sida för uppgifter)
 * Utvärdera och testa lite css-animationer och effekter till sidan
 * Lägg över pdotest.php till en generell site (typ secure) och ta bort från huvudmappen (ingår inte i siten utan är ett generellt verktyg för att kontrollera databaskopplingen)
-* Gör en pomodoro-klocka till hemsidan
-* Gör en internet-tid-klocka till sidan.
 * Gör kursmoment js 01 - Utvecklingsmiljö och grunder
 * Gör kursmoment js 02 - moduler
 * Gör kursmoment js 03 - DOM och events
 * Gör kursmoment js 04 - webpack
 * Gör kursmoment js 05 - WebAPI
 * Gör kursmoment js 04 - Objekt
+* Gör en pomodoro-klocka till hemsidan
+* Gör en internet-tid-klocka till sidan.
 * Strukturera om så att underlaget under secure kan användas för flera siter. Exempelvis lägg controllers under en shared-mapp och endast site unika controllers under site-mapparna. För att detta ska fungera måste new Site anropas med vilken site som ska skapas och mappar som exempelvis content_folder kan inte beräknas från Site-klassfilens fysiska position.
 * Skapa och implementera en fritext-sökning på sidan (kan man använda någon sökmotors api eller måste man skapa en egen?)
+* Utred hur man använder mail Chimp för att skapa en mailserver och vad som skulle krävas för att skapa en egen mailklient på sidan.
+* Lägg in projektregistret på sidan
+    * Gör så att varje användare kan göra sina egna projet med fillagring och tasklistor
+
 
 Done
 ---------------------------------------------------------------------------------------------------
+### 2023-04-24
+* Gör om databaskopplingen så den använder pdo-rutiner istället för mysqli (authentication jmf med signup.php)
+* Visa navbar i registration for
+
 ### 2023-04-23
 * Skapa en RESTful router (jmf rewritetest-mappen på local)
     * Se till att navigeringen använder url istället för filsökvägar

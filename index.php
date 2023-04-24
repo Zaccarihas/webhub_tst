@@ -3,7 +3,7 @@
     // Configurate
     require_once('/var/www/secure/nav/controllers/init.php');
     require_once('/var/www/secure/nav/controllers/cls_site.php');
-    //$curpage = htmlentities($_GET['page'] ?? 'index.md');
+    
     $curpage = translate_url(htmlentities($_GET['page'] ?? 'index.md'),'/var/www/secure/nav/models/content');
 
     $hub = new Site(__DIR__, $curpage);
@@ -11,7 +11,8 @@
     // Rout and render requested page
     
     // echo "<pre>";
-    // echo "Calling router with $curpage";
+    //echo "Incoming: ".$_GET['page']."<br>";
+    //echo "Calling router with $curpage";
 
     $hub->route($curpage);
     //echo $curpage;
@@ -20,6 +21,8 @@
     function translate_url($url, $path) {
         
         if ($url == 'index.md' || $url == '') return 'index.md';
+
+        if ($url == 'registration') return 'registration';
         
         // Hämta nästa sökord
         $pos = strpos($url,'/');
