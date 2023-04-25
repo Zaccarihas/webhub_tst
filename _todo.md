@@ -1,9 +1,12 @@
 --- 
 In progress
 ---------------------------------------------------------------------------------------------------  
-* Fixa till en lösning för att presentera felmeddelanden från exempelvis en misslyckad registrering av användare (se signup.php)
-    * Fixa till så att en misslyckad inloggning hamnar tillbaka på framsidan med ett felmeddelande.
-    * Jämför flash-messages på nätet
+
+* Inför mer kontroller kring registrering av användare:
+    * Mandatory fields
+    * kontrollera e-post mot reguljärt uttryck
+    * Sätt minimum längd på lösenord
+    * Kontroller om användarnamn och fullständigt namn har använts tidigare
 
 Backlog
 ---------------------------------------------------------------------------------------------------
@@ -29,6 +32,10 @@ $twig = new \Twig\Environment($loader, [
     * Låt användaren bestämma om endast betrodda ip-nummer får användas för uppkoppling eller om användaren vill ha en varning med möjlighet till utloggning och spärr om inloggning sker från okänt ip-nummer.
 * Snygga till returen från authorize_user i authorization.php (inte snyggt med if-sats men jämförelsen med $pos misslyckades).
 * Studera kryptering. vad är skillnaden mellan rsa, escd, etc. Hur fungerar ssh och keychain
+    * Vad krävs för att sätta upp en vpn mot sidan
+    * Hur fungerar mina https-certifikat
+* Styla flash-meddelanden så att olika typer presenteras på olika sätt.
+    * Ändra stilmallen så inget utrymme tas upp på sidan avsett för flashmeddelanden om inget meddelanden ska visas.
 
 ### Version 1.2
 * Gör kursmoment desing 04 - Färg
@@ -87,6 +94,11 @@ $twig = new \Twig\Environment($loader, [
 
 Done
 ---------------------------------------------------------------------------------------------------
+### 2023-04-25
+* Fixa till en lösning för att presentera felmeddelanden från exempelvis en misslyckad registrering av användare (se signup.php)
+    * Fixa till så att en misslyckad inloggning hamnar tillbaka på framsidan med ett felmeddelande.
+    * Jämför flash-messages på nätet
+
 ### 2023-04-24
 * Gör om databaskopplingen så den använder pdo-rutiner istället för mysqli (authentication jmf med signup.php)
 * Visa navbar i registration for
