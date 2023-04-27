@@ -1,19 +1,13 @@
 --- 
 In progress
 ---------------------------------------------------------------------------------------------------  
-
-* Inför mer kontroller kring registrering av användare:
-    * Mandatory fields
-    * kontrollera e-post mot reguljärt uttryck
-    * Sätt minimum längd på lösenord
-    * Kontroller om användarnamn och fullständigt namn har använts tidigare
+* Gör så att cls_site använder StaticPage-klassen för default-sidorna.
+* Döp om sidan till webhub och hitta på en ny underrubrik
 
 Backlog
 ---------------------------------------------------------------------------------------------------
-
 ### Published version 1.0 online
-* Gör så att cls_site använder StaticPage-klassen för default-sidorna.
-* Döp om sidan till webhub och hitta på en ny underrubrik
+
 * Göra nya sidan publik på webservern och ersätt Pico-varianten.
 
 ### Version 1.1
@@ -31,6 +25,11 @@ $twig = new \Twig\Environment($loader, [
 * Gör en logg för varje användare över vilka ip de brukar ansluta från. 
     * Låt användaren bestämma om endast betrodda ip-nummer får användas för uppkoppling eller om användaren vill ha en varning med möjlighet till utloggning och spärr om inloggning sker från okänt ip-nummer.
 * Snygga till returen från authorize_user i authorization.php (inte snyggt med if-sats men jämförelsen med $pos misslyckades).
+* Gör så att redan inmatade fält i registration-form bevaras ifall man blir återkopplad efter en felaktig registrering. (ex om password confirmation inte fungerar.)
+* Inför mer kontroller kring registrering av användare:
+    * Kontrollera om fullständigt namn på ny användare har använts tidigare
+    * kontrollera e-post mot reguljärt uttryck
+    * Sätt minimum längd på lösenord
 * Studera kryptering. vad är skillnaden mellan rsa, escd, etc. Hur fungerar ssh och keychain
     * Vad krävs för att sätta upp en vpn mot sidan
     * Hur fungerar mina https-certifikat
@@ -51,23 +50,28 @@ $twig = new \Twig\Environment($loader, [
 * Skapa en online md-editor
 * Gör en flernivåslista för navigering där man kan expandera och navigera sig i ett träd.
 
+### Version 1.4
+* Lägg in funktionalitet för att ladda upp filer till servern (jmf inventory)
+* Lägg till fält för användarbild
+    * Se till att bilden går att laddas upp från sidan
+    * Använd användarbilden på profilsidorna och i byline
+* Snygga till Registration form genom att använda 8pt-metoden för att sätta storleken på fält bl a.
+
 ### Version 2.0
 * Skapa en ny förgrening (fork) i git för version 2.0
 * Utred hur dynamiska sidor ska hanteras. Ska de representeras av en md-fil med bara config-delen? Ska de ha en egen klass DynamicPage. Hur kan man nästla in statiska och dynamiska sidor i samma navigering.
 * Läs på om autoloaders. (jmf med den autoloader som composer redan skapat i vendor. - Kan man ha flera autoloader eller måste jag lägga mina egna klasser under vendor. Kan jag modifiera autoloader under vendor så jag kan lägga mina egna klasser någon annanstans eller måste jag registrera mina klasser enlig paketen på packagist?)
 * Gör om todo-list till en databaslista som kan hanteras via hemsidan.
-* Snygga till Registration form genom att använda 8pt-metoden för att sätta storleken på fält bl a.
 * Gör ett helt nytt tema (mer modernt - utan klassiskt sidhuvud och sidfot) och testa att växla mellan de olika temorna
 * Se serien Udamy Clone på youtube
 * Utred om man kan skapa taxonomies som sen kan ligga till grund för speciell navigering
 * Skapa en blogg funktion
-* Lägg in funktionalitet för att ladda upp filer till servern (jmf inventory)
 * Skapa ett forum med PHP-forum
 * Lägg in dbit
 * Lägg in inventory
 * Lägg in home maintenance
 * Beskriv css-enheter så som em, ex, px, pt, %, vw, rem etc
-* Beskriv de globala egenskapsvärdena inherit, initial, revert, revert-layer och unset
+* Beskriv de globala egenskapsvärdena (html/css) inherit, initial, revert, revert-layer och unset
 * Studera layoutmetoden float och beskriv den (inkl clearfix)
 * Studera verktygen för webdesign: Colorzilla, Figma och Adobe XD
 * Studera Typography Handbook på nätet.
@@ -90,10 +94,19 @@ $twig = new \Twig\Environment($loader, [
 * Utred hur man använder mail Chimp för att skapa en mailserver och vad som skulle krävas för att skapa en egen mailklient på sidan.
 * Lägg in projektregistret på sidan
     * Gör så att varje användare kan göra sina egna projet med fillagring och tasklistor
+* Skapa javascript-funktioner så som softscroll på textsidorna.
 
 
 Done
 ---------------------------------------------------------------------------------------------------
+### 2023-04-27
+* Inför mer kontroller kring registrering av användare:
+    * Mandatory fields
+    * Kontroller om användarnamn används tidigare
+* Skicka flash-meddelande och visa dessa på formulärsidan ifall fält inte har fyllts i korrekt.
+* Kontrollera att inga inmatningar kan innehålla sql-injections. (htmlentities etc)
+
+
 ### 2023-04-25
 * Fixa till en lösning för att presentera felmeddelanden från exempelvis en misslyckad registrering av användare (se signup.php)
     * Fixa till så att en misslyckad inloggning hamnar tillbaka på framsidan med ett felmeddelande.
