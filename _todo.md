@@ -1,14 +1,12 @@
 --- 
 In progress
 ---------------------------------------------------------------------------------------------------  
-* Gör så att cls_site använder StaticPage-klassen för default-sidorna.
-* Döp om sidan till webhub och hitta på en ny underrubrik
+* Göra nya sidan publik på webservern och ersätt Pico-varianten.
 
 Backlog
 ---------------------------------------------------------------------------------------------------
 ### Published version 1.0 online
 
-* Göra nya sidan publik på webservern och ersätt Pico-varianten.
 
 ### Version 1.1
 * Sätt up en adminsida där man kan godkänna användare (active), ändra användaruppgifter, ta bort användare  och ändra lösenord.
@@ -49,6 +47,7 @@ $twig = new \Twig\Environment($loader, [
 * Refactor och skapa mer OOP i befintliga klasser
 * Skapa en online md-editor
 * Gör en flernivåslista för navigering där man kan expandera och navigera sig i ett träd.
+* Gör så att hänsyn tas till sidans status, d v s om status inte är published så ska den inte visas för andra än författaren och admin
 
 ### Version 1.4
 * Lägg in funktionalitet för att ladda upp filer till servern (jmf inventory)
@@ -99,6 +98,15 @@ $twig = new \Twig\Environment($loader, [
 
 Done
 ---------------------------------------------------------------------------------------------------
+### 2023-04-29
+* Begränsa tillgången till innehållssidorna genom att sätta attribut i config-delen av sidan
+Satte in så att man döljer alla mappar som inleds med underscore
+
+
+### 2023-04-28
+* Gör så att cls_site använder StaticPage-klassen för default-sidorna.
+* Döp om sidan till webhub och hitta på en ny underrubrik
+
 ### 2023-04-27
 * Inför mer kontroller kring registrering av användare:
     * Mandatory fields

@@ -9,14 +9,7 @@
     $hub = new Site(__DIR__, $curpage);
 
     // Rout and render requested page
-    
-    // echo "<pre>";
-    //echo "Incoming: ".$_GET['page']."<br>";
-    //echo "Calling router with $curpage";
-
     $hub->route($curpage);
-    //echo $curpage;
-    //echo "<hr><hr><br>Filepath from url: ".translate_url($curpage, '/var/www/secure/nav/models/content');
     
     function translate_url($url, $path) {
         
