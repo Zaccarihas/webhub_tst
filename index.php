@@ -1,15 +1,20 @@
 <?php 
     
     // Configurate
-    require_once('/var/www/secure/nav/controllers/init.php');
-    require_once('/var/www/secure/nav/controllers/cls_site.php');
+    $_PUBLIC_WEB_FOLDER = 'html';
+    $_SECURE_WEB_FOLDER = 'secure';
+    $secure_path = str_replace($_PUBLIC_WEB_FOLDER,$_SECURE_WEB_FOLDER,__DIR__);
+    require_once($secure_path . '/controllers/init.php');
     
-    $curpage = translate_url(htmlentities($_GET['page'] ?? 'index.md'),'/var/www/secure/nav/models/content');
-
+    // Beräkningen av curpage borde ligga i Site där även funktionen translate_url borde finnas.
+    $curpage = translate_url(htmlentities($_GET['page'] ?? 'index.md'),$secure_path . '/models/content');
+    
+    // Varför skickar jag in curpage både till constructorn och till routern?
     $hub = new Site(__DIR__, $curpage);
 
     // Rout and render requested page
     $hub->route($curpage);
+    
     
     function translate_url($url, $path) {
         

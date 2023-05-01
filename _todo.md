@@ -1,14 +1,25 @@
---- 
 In progress
 ---------------------------------------------------------------------------------------------------  
-* Göra nya sidan publik på webservern och ersätt Pico-varianten.
+* Länkar som sätts i bl a attributes-matrisen är hårdtypade till site-nament. Generealisera så att detta tas från config-filen istället.
+* Länkar till assetts i templates är hårdtypade (ex logo), fixa så att de tas från config
+* Funktionen make_restful_url i nav-klassen hänvisar till hårdtypad sökväg /nav. Gör denna mer generell
 
 Backlog
 ---------------------------------------------------------------------------------------------------
-### Published version 1.0 online
+### Version 1.0
 
+#### Version 1.1
 
-### Version 1.1
+##### Version 1.0.1 - Packaging
+* Gör en egen repository för den publicerade siten och fundera på hur man ska göra för att implementera ny versioner i framtiden.
+* Rensa i index.php enligt inlagda kommentarer.
+
+##### Version 1.0.2 - Content management
+* Gör så att hänsyn tas till sidans status, d v s om status inte är published så ska den inte visas för andra än författaren och admin
+* Om mappen är synlig (inget underscore) men index-filen är låst (Draft eller högre behörighets krav) så ska inte mappen heller visas.
+* Utred hur man kan textsöka bland filerna.
+
+#### Version 1.2 - User management
 * Sätt up en adminsida där man kan godkänna användare (active), ändra användaruppgifter, ta bort användare  och ändra lösenord.
 * Skicka inte med databasuppgifterna i session. Uppkopplingsdata hårdkodas in i varje controller.
 * Läs på mer om Twig envirenment och hur man använder cache
@@ -34,7 +45,7 @@ $twig = new \Twig\Environment($loader, [
 * Styla flash-meddelanden så att olika typer presenteras på olika sätt.
     * Ändra stilmallen så inget utrymme tas upp på sidan avsett för flashmeddelanden om inget meddelanden ska visas.
 
-### Version 1.2
+#### Version 1.3 - Adaptive
 * Gör kursmoment desing 04 - Färg
 * Gör kursmoment design 05 - Bild
 * Repetera kursmoment design 03 - Layout
@@ -43,13 +54,7 @@ $twig = new \Twig\Environment($loader, [
 * Anpassa sida för mobil
 * Anpassa sida för bredare skärmar som tar tillvara mer av ytan.
 
-### Version 1.3
-* Refactor och skapa mer OOP i befintliga klasser
-* Skapa en online md-editor
-* Gör en flernivåslista för navigering där man kan expandera och navigera sig i ett träd.
-* Gör så att hänsyn tas till sidans status, d v s om status inte är published så ska den inte visas för andra än författaren och admin
-
-### Version 1.4
+#### Version 1.4
 * Lägg in funktionalitet för att ladda upp filer till servern (jmf inventory)
 * Lägg till fält för användarbild
     * Se till att bilden går att laddas upp från sidan
@@ -58,8 +63,14 @@ $twig = new \Twig\Environment($loader, [
 
 ### Version 2.0
 * Skapa en ny förgrening (fork) i git för version 2.0
+
+### Version 2.1 - Online editing
+* Refactor och skapa mer OOP i befintliga klasser
+* Skapa en online md-editor
+* Gör en flernivåslista för navigering där man kan expandera och navigera sig i ett träd.
+
+### Unplanned
 * Utred hur dynamiska sidor ska hanteras. Ska de representeras av en md-fil med bara config-delen? Ska de ha en egen klass DynamicPage. Hur kan man nästla in statiska och dynamiska sidor i samma navigering.
-* Läs på om autoloaders. (jmf med den autoloader som composer redan skapat i vendor. - Kan man ha flera autoloader eller måste jag lägga mina egna klasser under vendor. Kan jag modifiera autoloader under vendor så jag kan lägga mina egna klasser någon annanstans eller måste jag registrera mina klasser enlig paketen på packagist?)
 * Gör om todo-list till en databaslista som kan hanteras via hemsidan.
 * Gör ett helt nytt tema (mer modernt - utan klassiskt sidhuvud och sidfot) och testa att växla mellan de olika temorna
 * Se serien Udamy Clone på youtube
@@ -91,16 +102,54 @@ $twig = new \Twig\Environment($loader, [
 * Strukturera om så att underlaget under secure kan användas för flera siter. Exempelvis lägg controllers under en shared-mapp och endast site unika controllers under site-mapparna. För att detta ska fungera måste new Site anropas med vilken site som ska skapas och mappar som exempelvis content_folder kan inte beräknas från Site-klassfilens fysiska position.
 * Skapa och implementera en fritext-sökning på sidan (kan man använda någon sökmotors api eller måste man skapa en egen?)
 * Utred hur man använder mail Chimp för att skapa en mailserver och vad som skulle krävas för att skapa en egen mailklient på sidan.
-* Lägg in projektregistret på sidan
+* Lägg in projektregistret på sidan### Published version 1.0 online
     * Gör så att varje användare kan göra sina egna projet med fillagring och tasklistor
 * Skapa javascript-funktioner så som softscroll på textsidorna.
-
+* Rensa bort siter som inte används från home.lofqivst.me och lägg dem på utvecklingsservern (BlueI5)
 
 Done
 ---------------------------------------------------------------------------------------------------
+### 2023-05-01
+* Läs på om autoloaders. (jmf med den autoloader som composer redan skapat i vendor. - Kan man ha flera autoloader eller måste jag lägga mina egna klasser under vendor. Kan jag modifiera autoloader under vendor så jag kan lägga mina egna klasser någon annanstans eller måste jag registrera mina klasser enlig paketen på packagist?) - Skapade en egen autoloader som jag registrerade. Det ska gå att använda Composers autoloader genom att lägga in sina egna namnutrymmen i composer.json men jag fick inte det att fungera.
+* Sökvägen för required-satserna i index.php och i kontrollers måste hårdtypas in.Går det att göra detta på ett smidigare sätt genom att sökvägen till den säkra delen anges i någon form av config-fil eller löser det sig med autoloader?
+
+
+### 2023-04-30
+* Göra nya sidan publik på webservern och ersätt Pico-varianten.
+    * Döp om Pico-sidan till något annat
+    * Klona in webhub_tst
+    * Installeras vendor på secure via composer
+    * Installera node-paketen via package.json. Fick lägga in ny version av node och npm, men la in den globalt så för att köra npm och node så behöver man köra sudo. <https://www.freecodecamp.org/news/how-to-update-node-and-npm-to-the-latest-version/>
+    * Fixa alla hårdtypade sökvägar i index.php och controllers på både publik och säker sida
+    * Aktivera yaml i php och sen starta om servern
+        * installera Yaml <http://bd808.com/pecl-file_formats-yaml/>
+        * Uppdatera php.ini (/etc/php/apache2) lägg till raden __extension = yaml.so__
+        * Starta om apache med __sudo service apache2 restart
+    * Fixa in logo - Hårdtypad sökväg i twig template
+    * Fixa in fa
+        * Packa ihop fa630 mapp och webfonts-mapp på utvecklingsserver
+        * Placera dem på prj
+        * Lyft in dem i produktionsservern
+    * Fixa navigeringen från navbar - Hårdtypad hänvisning till /nav i Nav-klassens funktion för att skapa restful url
+    * Login - felaktig header till /local/homeport istället för bara /homeport
+    * Logout - felaktig header
+    * Register - felaktig header till /nav
+
+* Published version 1.0 online
+
 ### 2023-04-29
 * Begränsa tillgången till innehållssidorna genom att sätta attribut i config-delen av sidan
 Satte in så att man döljer alla mappar som inleds med underscore
+
+* Göra nya sidan publik på webservern och ersätt Pico-varianten.
+    * Skapa en ny mapp 'secure' utanför webservern, och en undermapp "homeport"
+    * Klona webhub_secure till den nya mappen
+    * Skapa en content-mapp under models
+        * Skapa ett bash-script som kopierar content från projekt-mappen på nas-en
+        * Tanka in innehållet från projekt-mappen till den säkra delen av sidan
+    * Sätt upp databasen på produktionsservern
+    * Skapa en config-fil
+
 
 
 ### 2023-04-28
