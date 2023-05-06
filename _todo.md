@@ -1,7 +1,6 @@
 In progress
 ---------------------------------------------------------------------------------------------------  
-* Länkar till assetts i templates är hårdtypade (ex logo), fixa så att de tas från config
-* Funktionen make_restful_url i nav-klassen hänvisar till hårdtypad sökväg /nav. Gör denna mer generell
+* Gör nytt försök till att sjösätta sidan
 * Dokumentera vilka delar som måste lyftas in manuellt när en ny site skapas (FA, composer install/update, npm update, etc)
 * Gör en egen repository för den publicerade siten och fundera på hur man ska göra för att implementera ny versioner i framtiden.
     * Ska nog inte göra egen repository - måste fixa så att uppdateringar från git fungerar även på produktionsservern. Kan innebära att vissa inställningar måste ligga i config-filen på produktionsservern och sedan läsa in dessa.
@@ -14,7 +13,6 @@ Backlog
 #### Version 1.1
 
 ##### Version 1.0.1 - Packaging
-* Rensa i index.php enligt inlagda kommentarer.
 
 ##### Version 1.0.2 - Content management
 * Gör så att hänsyn tas till sidans status, d v s om status inte är published så ska den inte visas för andra än författaren och admin
@@ -50,6 +48,7 @@ $twig = new \Twig\Environment($loader, [
 #### Version 1.3 - Adaptive
 * Gör kursmoment desing 04 - Färg
 * Gör kursmoment design 05 - Bild
+* Studera picture-elementet
 * Repetera kursmoment design 03 - Layout
 * Kolla upp layout-teknik med spalter och 16-delar och beskriv detta
 * Studera responsiv design via <https://web.dev/learn/design/>
@@ -91,7 +90,7 @@ $twig = new \Twig\Environment($loader, [
 * Beskriv de globala egenskapsvärdena (html/css) inherit, initial, revert, revert-layer och unset
 * Studera layoutmetoden float och beskriv den (inkl clearfix)
 * Studera verktygen för webdesign: Colorzilla, Figma och Adobe XD
-* Studera Typography Handbook på nätet.
+* Studera Typography Handbook på nätet.* Länkar till assetts i templates är hårdtypade (ex logo), fixa så att de tas från config
 * Läs och studera boken A beutiful webdesin som finns på nasen.
 * Studera mer om grid layout för websidor
 * Utvärdera och testa lite css-animationer och effekter till sidan
@@ -135,14 +134,15 @@ Unplanned
 ---------------------------------------------------------------------------------------------------
 * Studera följande HTML-element: dialog, datalist och listproperty på en input, __input type="color/time"__, progressbar, open graph
 * Studera meta-taggar för tillbaka länkar till siten så som facebooks og (open graph) och twitters twitter-property
-* Studera picture-elementet
 * Studera template elementet
 
 Done
 ---------------------------------------------------------------------------------------------------
 ### 2023-05-06
 * Länkar som sätts i bl a attributes-matrisen är hårdtypade till site-nament. Generalisera så att detta tas från config-filen istället.
-
+* Länkar till assetts i templates är hårdtypade (ex logo), fixa så att de tas från config - Satte som attribut till mallen. (ej från config)
+* Funktionen make_restful_url i nav-klassen hänvisar till hårdtypad sökväg /nav. Gör denna mer generell
+* Rensa i index.php enligt inlagda kommentarer.
 
 ### 2023-05-01
 * Läs på om autoloaders. (jmf med den autoloader som composer redan skapat i vendor. - Kan man ha flera autoloader eller måste jag lägga mina egna klasser under vendor. Kan jag modifiera autoloader under vendor så jag kan lägga mina egna klasser någon annanstans eller måste jag registrera mina klasser enlig paketen på packagist?) - Skapade en egen autoloader som jag registrerade. Det ska gå att använda Composers autoloader genom att lägga in sina egna namnutrymmen i composer.json men jag fick inte det att fungera.
