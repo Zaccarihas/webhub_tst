@@ -8,9 +8,10 @@
     
     // Beräkningen av curpage borde ligga i Site där även funktionen translate_url borde finnas.
     $curpage = translate_url(htmlentities($_GET['page'] ?? 'index.md'),$secure_path . '/models/content');
-    
+
+   
     // Varför skickar jag in curpage både till constructorn och till routern?
-    $hub = new Site(__DIR__, $curpage);
+    $hub = new Site(__DIR__, $curpage);  // /var/www/html/folder , index.md
 
     // Rout and render requested page
     $hub->route($curpage);

@@ -1,8 +1,11 @@
 In progress
 ---------------------------------------------------------------------------------------------------  
-* Länkar som sätts i bl a attributes-matrisen är hårdtypade till site-nament. Generealisera så att detta tas från config-filen istället.
 * Länkar till assetts i templates är hårdtypade (ex logo), fixa så att de tas från config
 * Funktionen make_restful_url i nav-klassen hänvisar till hårdtypad sökväg /nav. Gör denna mer generell
+* Dokumentera vilka delar som måste lyftas in manuellt när en ny site skapas (FA, composer install/update, npm update, etc)
+* Gör en egen repository för den publicerade siten och fundera på hur man ska göra för att implementera ny versioner i framtiden.
+    * Ska nog inte göra egen repository - måste fixa så att uppdateringar från git fungerar även på produktionsservern. Kan innebära att vissa inställningar måste ligga i config-filen på produktionsservern och sedan läsa in dessa.
+
 
 Backlog
 ---------------------------------------------------------------------------------------------------
@@ -11,7 +14,6 @@ Backlog
 #### Version 1.1
 
 ##### Version 1.0.1 - Packaging
-* Gör en egen repository för den publicerade siten och fundera på hur man ska göra för att implementera ny versioner i framtiden.
 * Rensa i index.php enligt inlagda kommentarer.
 
 ##### Version 1.0.2 - Content management
@@ -63,23 +65,28 @@ $twig = new \Twig\Environment($loader, [
 
 ### Version 2.0
 * Skapa en ny förgrening (fork) i git för version 2.0
+* Se serien Udamy Clone på youtube
 
-### Version 2.1 - Online editing
+#### Version 2.1 - Online editing
 * Refactor och skapa mer OOP i befintliga klasser
 * Skapa en online md-editor
 * Gör en flernivåslista för navigering där man kan expandera och navigera sig i ett träd.
 
-### Unplanned
+#### Version 2.2 - Dynamiska sidor
 * Utred hur dynamiska sidor ska hanteras. Ska de representeras av en md-fil med bara config-delen? Ska de ha en egen klass DynamicPage. Hur kan man nästla in statiska och dynamiska sidor i samma navigering.
 * Gör om todo-list till en databaslista som kan hanteras via hemsidan.
+* Skapa och implementera en fritext-sökning på sidan (kan man använda någon sökmotors api eller måste man skapa en egen?)
+
+### Version 3.0 - New Design
+
+#### Version 3.1 - Repackaging
+* Strukturera om så att underlaget under secure kan användas för flera siter. Exempelvis lägg controllers under en shared-mapp och endast site unika controllers under site-mapparna. För att detta ska fungera måste new Site anropas med vilken site som ska skapas och mappar som exempelvis content_folder kan inte beräknas från Site-klassfilens fysiska position.
+* Rensa bort siter som inte används från home.lofqivst.me och lägg dem på utvecklingsservern (BlueI5)
+* Lägg över pdotest.php till en generell site (typ secure) och ta bort från huvudmappen (ingår inte i siten utan är ett generellt verktyg för att kontrollera databaskopplingen)
+* I ParseExtra i vendor-mappen används en utgången funktion mb_convert_encoding. Här: <https://stackoverflow.com/questions/11974008/alternative-to-mb-convert-encoding-with-html-entities-charset> beskrivs ett alternativt sätt men jag vet inte om jag vill uppdatera filer som jag installerat via composer `(htmlspecialchars_decode(utf8_decode(htmlentities($string, ENT_COMPAT, 'utf-8', false)));)`. (Felmeddelandet dyker på sidan SQLite)
+
+#### Version 3.2 - CSS
 * Gör ett helt nytt tema (mer modernt - utan klassiskt sidhuvud och sidfot) och testa att växla mellan de olika temorna
-* Se serien Udamy Clone på youtube
-* Utred om man kan skapa taxonomies som sen kan ligga till grund för speciell navigering
-* Skapa en blogg funktion
-* Skapa ett forum med PHP-forum
-* Lägg in dbit
-* Lägg in inventory
-* Lägg in home maintenance
 * Beskriv css-enheter så som em, ex, px, pt, %, vw, rem etc
 * Beskriv de globala egenskapsvärdena (html/css) inherit, initial, revert, revert-layer och unset
 * Studera layoutmetoden float och beskriv den (inkl clearfix)
@@ -87,28 +94,56 @@ $twig = new \Twig\Environment($loader, [
 * Studera Typography Handbook på nätet.
 * Läs och studera boken A beutiful webdesin som finns på nasen.
 * Studera mer om grid layout för websidor
-* I ParseExtra i vendor-mappen används en utgången funktion mb_convert_encoding. Här: <https://stackoverflow.com/questions/11974008/alternative-to-mb-convert-encoding-with-html-entities-charset> beskrivs ett alternativt sätt men jag vet inte om jag vill uppdatera filer som jag installerat via composer `(htmlspecialchars_decode(utf8_decode(htmlentities($string, ENT_COMPAT, 'utf-8', false)));)`. (Felmeddelandet dyker på sidan SQLite)
-* Testa drag and drop funktion på någon sida (ev en kanban-sida för uppgifter)
 * Utvärdera och testa lite css-animationer och effekter till sidan
-* Lägg över pdotest.php till en generell site (typ secure) och ta bort från huvudmappen (ingår inte i siten utan är ett generellt verktyg för att kontrollera databaskopplingen)
+
+#### Version 3.3 - JS
 * Gör kursmoment js 01 - Utvecklingsmiljö och grunder
 * Gör kursmoment js 02 - moduler
 * Gör kursmoment js 03 - DOM och events
 * Gör kursmoment js 04 - webpack
 * Gör kursmoment js 05 - WebAPI
 * Gör kursmoment js 04 - Objekt
-* Gör en pomodoro-klocka till hemsidan
-* Gör en internet-tid-klocka till sidan.
-* Strukturera om så att underlaget under secure kan användas för flera siter. Exempelvis lägg controllers under en shared-mapp och endast site unika controllers under site-mapparna. För att detta ska fungera måste new Site anropas med vilken site som ska skapas och mappar som exempelvis content_folder kan inte beräknas från Site-klassfilens fysiska position.
-* Skapa och implementera en fritext-sökning på sidan (kan man använda någon sökmotors api eller måste man skapa en egen?)
-* Utred hur man använder mail Chimp för att skapa en mailserver och vad som skulle krävas för att skapa en egen mailklient på sidan.
-* Lägg in projektregistret på sidan### Published version 1.0 online
-    * Gör så att varje användare kan göra sina egna projet med fillagring och tasklistor
 * Skapa javascript-funktioner så som softscroll på textsidorna.
-* Rensa bort siter som inte används från home.lofqivst.me och lägg dem på utvecklingsservern (BlueI5)
+* Gör en internet-tid-klocka till sidan.
+
+### 4.0 - Functions
+
+#### 4.1 - Inventory
+* Lägg in inventory
+
+#### 4.2 - Home Maintenance
+* Lägg in home maintenance
+
+#### 4.3 - Project
+* Gör en pomodoro-klocka till hemsidan
+* Testa drag and drop funktion på någon sida (ev en kanban-sida för uppgifter)
+* Lägg in projektregistret på sidan
+    * Gör så att varje användare kan göra sina egna projekt med fillagring och tasklistor
+
+#### 4.4 - Site improvments
+* Utred om man kan skapa taxonomies som sen kan ligga till grund för speciell navigering
+* Utred hur man använder mail Chimp för att skapa en mailserver och vad som skulle krävas för att skapa en egen mailklient på sidan.
+
+#### 4.5 - Blogg & Forum
+* Skapa en blogg funktion
+* Skapa ett forum med PHP-forum
+
+#### 4.6 - DBit
+* Lägg in dbit
+
+Unplanned
+---------------------------------------------------------------------------------------------------
+* Studera följande HTML-element: dialog, datalist och listproperty på en input, __input type="color/time"__, progressbar, open graph
+* Studera meta-taggar för tillbaka länkar till siten så som facebooks og (open graph) och twitters twitter-property
+* Studera picture-elementet
+* Studera template elementet
 
 Done
 ---------------------------------------------------------------------------------------------------
+### 2023-05-06
+* Länkar som sätts i bl a attributes-matrisen är hårdtypade till site-nament. Generalisera så att detta tas från config-filen istället.
+
+
 ### 2023-05-01
 * Läs på om autoloaders. (jmf med den autoloader som composer redan skapat i vendor. - Kan man ha flera autoloader eller måste jag lägga mina egna klasser under vendor. Kan jag modifiera autoloader under vendor så jag kan lägga mina egna klasser någon annanstans eller måste jag registrera mina klasser enlig paketen på packagist?) - Skapade en egen autoloader som jag registrerade. Det ska gå att använda Composers autoloader genom att lägga in sina egna namnutrymmen i composer.json men jag fick inte det att fungera.
 * Sökvägen för required-satserna i index.php och i kontrollers måste hårdtypas in.Går det att göra detta på ett smidigare sätt genom att sökvägen till den säkra delen anges i någon form av config-fil eller löser det sig med autoloader?
