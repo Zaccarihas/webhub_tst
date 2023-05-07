@@ -1,18 +1,10 @@
 In progress
 ---------------------------------------------------------------------------------------------------  
-* Uppdatera redirect-scripten så att de använder en generisk adress.
-* Utred varför inte Code visas på produktionsservern fast än att den finns i contentmappen och är öppen.
+
 
 Backlog
 ---------------------------------------------------------------------------------------------------
 ### Version 1.0
-
-#### Version 1.1
-
-##### Version 1.0.2 - Content management
-* Gör så att hänsyn tas till sidans status, d v s om status inte är published så ska den inte visas för andra än författaren och admin
-* Om mappen är synlig (inget underscore) men index-filen är låst (Draft eller högre behörighets krav) så ska inte mappen heller visas.
-* Utred hur man kan textsöka bland filerna.
 
 #### Version 1.2 - User management
 * Sätt up en adminsida där man kan godkänna användare (active), ändra användaruppgifter, ta bort användare  och ändra lösenord.
@@ -130,6 +122,11 @@ Unplanned
 * Studera följande HTML-element: dialog, datalist och listproperty på en input, __input type="color/time"__, progressbar, open graph
 * Studera meta-taggar för tillbaka länkar till siten så som facebooks og (open graph) och twitters twitter-property
 * Studera template elementet
+* Lägg meta-taggen som tar hänsyn till hur robots ska hantera sidan
+* Lägg till så att sidor kan presenteras i olika mallar beroende på vilken template som angivits i yaml för sidan.
+* Gör en publik-struktur som inte innehåller 'Draft' sidor, och en privat struktur där användaren kan navigera bland publicerade och sina egna opublicerade sidor.
+    * Om mappen är synlig (inget underscore) men index-filen är låst (Draft eller högre behörighets krav) så ska inte mappen heller visas.
+* Utred hur man kan textsöka bland filerna.
 
 Done
 ---------------------------------------------------------------------------------------------------
@@ -141,6 +138,10 @@ Done
 * Sjösatt Version 1.0.1 - Packaging
 * Utred varför jag behöver redirect controllers för login, logout och signup? Varför kan jag inte anropa de vanliga hanterarna direkt?
     - Eftersom man inte kan lägga in en sökväg till en fil som ligger utanför den publika delen av webservern, som form action för inloggningsformuläret.
+* Uppdatera redirect-scripten så att de använder en generisk adress.
+* Utred varför inte Code visas på produktionsservern fast än att den finns i contentmappen och är öppen.
+* Gör så att hänsyn tas till sidans status, d v s om status inte är published så ska den inte visas för andra än författaren och admin
+* Sjösätter Version 1.0.2 och därmed också Version 1.1
 
 ### 2023-05-06
 * Länkar som sätts i bl a attributes-matrisen är hårdtypade till site-nament. Generalisera så att detta tas från config-filen istället.
