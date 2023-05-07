@@ -1,18 +1,13 @@
 In progress
 ---------------------------------------------------------------------------------------------------  
-* Gör nytt försök till att sjösätta sidan
-* Dokumentera vilka delar som måste lyftas in manuellt när en ny site skapas (FA, composer install/update, npm update, etc)
-* Gör en egen repository för den publicerade siten och fundera på hur man ska göra för att implementera ny versioner i framtiden.
-    * Ska nog inte göra egen repository - måste fixa så att uppdateringar från git fungerar även på produktionsservern. Kan innebära att vissa inställningar måste ligga i config-filen på produktionsservern och sedan läsa in dessa.
-
+* Uppdatera redirect-scripten så att de använder en generisk adress.
+* Utred varför inte Code visas på produktionsservern fast än att den finns i contentmappen och är öppen.
 
 Backlog
 ---------------------------------------------------------------------------------------------------
 ### Version 1.0
 
 #### Version 1.1
-
-##### Version 1.0.1 - Packaging
 
 ##### Version 1.0.2 - Content management
 * Gör så att hänsyn tas till sidans status, d v s om status inte är published så ska den inte visas för andra än författaren och admin
@@ -138,6 +133,15 @@ Unplanned
 
 Done
 ---------------------------------------------------------------------------------------------------
+### 2023-05-07
+* Gör nytt försök till att sjösätta sidan
+* Dokumentera vilka delar som måste lyftas in manuellt när en ny site skapas (FA, composer install/update, npm update, etc)
+* Gör en egen repository för den publicerade siten och fundera på hur man ska göra för att implementera ny versioner i framtiden.
+    * Ska nog inte göra egen repository - måste fixa så att uppdateringar från git fungerar även på produktionsservern. Kan innebära att vissa inställningar måste ligga i config-filen på produktionsservern och sedan läsa in dessa.
+* Sjösatt Version 1.0.1 - Packaging
+* Utred varför jag behöver redirect controllers för login, logout och signup? Varför kan jag inte anropa de vanliga hanterarna direkt?
+    - Eftersom man inte kan lägga in en sökväg till en fil som ligger utanför den publika delen av webservern, som form action för inloggningsformuläret.
+
 ### 2023-05-06
 * Länkar som sätts i bl a attributes-matrisen är hårdtypade till site-nament. Generalisera så att detta tas från config-filen istället.
 * Länkar till assetts i templates är hårdtypade (ex logo), fixa så att de tas från config - Satte som attribut till mallen. (ej från config)
