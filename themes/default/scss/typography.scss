@@ -3,6 +3,9 @@
 // @import url('https://fonts.googleapis.com/css2?family=Martian+Mono&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Mukta:wght@300&display=swap');
 
+// Define fonts
+$normal-font: 'Mukta', sans-serif;
+
 
 .header {
     //font-family: 'Martian Mono', monospace;
@@ -11,5 +14,6 @@
 
 .normal-font,
 p {
-    font-family: 'Mukta', sans-serif;
+    font-family: $normal-font;
 }
+

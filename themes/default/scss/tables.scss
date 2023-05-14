@@ -1,0 +1,37 @@
+/** tables.css */
+
+$tbl-cell-padding: 0.3rem;
+
+.tbl-common{
+
+    border-collapse: collapse;
+    
+
+    thead tr {
+        background-color: $backenhancement;
+    }
+
+    th {
+        font-family: $normal-font;
+        font-size: 0.9em;
+        text-align: left;
+        margin: 0px;
+        padding: $tbl-cell-padding;    
+    }
+
+    td {
+        font-family: $normal-font;
+        margin: 0px;
+        padding: $tbl-cell-padding;
+    }
+
+    .cell-center {
+        text-align: center !important;
+    }
+
+
+}
+
+
+
+

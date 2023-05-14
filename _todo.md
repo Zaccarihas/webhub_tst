@@ -1,5 +1,6 @@
 In progress
 ---------------------------------------------------------------------------------------------------  
+* Studera HTML-elementet Dialog (modulär) och se hur det kan användas för att skapa popup-formulär för att ändra användardata
 
 
 Backlog
@@ -7,30 +8,44 @@ Backlog
 ### Version 1.0
 
 #### Version 1.2 - User management
-* Sätt up en adminsida där man kan godkänna användare (active), ändra användaruppgifter, ta bort användare  och ändra lösenord.
+
+##### Version 1.2.1 - Admin page
+* Sätt up en adminsida:
+    * Lägg in funktionalitet som:
+        * ta bort användare
+        * ändra användaruppgifter
+        * ändra lösenord
+* Gör en vy av alla sidor under content där man kan se varje sidas config data
+
+##### Version 1.2.2 - Security
 * Skicka inte med databasuppgifterna i session. Uppkopplingsdata hårdkodas in i varje controller.
-* Läs på mer om Twig envirenment och hur man använder cache
+* Läs på mer om Twig enviroenment och hur man använder cache
 ~~~
 $twig = new \Twig\Environment($loader, [
     'cache' => 'themes/shared/templ_cache'
 ]);
 ~~~
+* Snygga till returen från authorize_user i authorization.php (inte snyggt med if-sats men jämförelsen med $pos misslyckades).
+* Studera kryptering. vad är skillnaden mellan rsa, escd, etc. Hur fungerar ssh och keychain
+    * Vad krävs för att sätta upp en vpn mot sidan
+    * Hur fungerar mina https-certifikat
+
+##### Version 1.2.2 - User page
 * Gör en profilsida för inloggad användare (kanske en privat (dold) och en publik).
     * Gör en byline som kan visas vid dokument och inläggg som användaren har skapat
 * Presentera anropande ip-nummer
 * Gör en logg för varje användare över vilka ip de brukar ansluta från. 
     * Låt användaren bestämma om endast betrodda ip-nummer får användas för uppkoppling eller om användaren vill ha en varning med möjlighet till utloggning och spärr om inloggning sker från okänt ip-nummer.
-* Snygga till returen från authorize_user i authorization.php (inte snyggt med if-sats men jämförelsen med $pos misslyckades).
 * Gör så att redan inmatade fält i registration-form bevaras ifall man blir återkopplad efter en felaktig registrering. (ex om password confirmation inte fungerar.)
 * Inför mer kontroller kring registrering av användare:
     * Kontrollera om fullständigt namn på ny användare har använts tidigare
     * kontrollera e-post mot reguljärt uttryck
     * Sätt minimum längd på lösenord
-* Studera kryptering. vad är skillnaden mellan rsa, escd, etc. Hur fungerar ssh och keychain
-    * Vad krävs för att sätta upp en vpn mot sidan
-    * Hur fungerar mina https-certifikat
+
+##### Version 1.2.3 - Improved messages and page meta data
 * Styla flash-meddelanden så att olika typer presenteras på olika sätt.
     * Ändra stilmallen så inget utrymme tas upp på sidan avsett för flashmeddelanden om inget meddelanden ska visas.
+* Presentera författare, status och role på varje sida
 
 #### Version 1.3 - Adaptive
 * Gör kursmoment desing 04 - Färg
@@ -41,8 +56,9 @@ $twig = new \Twig\Environment($loader, [
 * Studera responsiv design via <https://web.dev/learn/design/>
 * Anpassa sida för mobil
 * Anpassa sida för bredare skärmar som tar tillvara mer av ytan.
+* Gör en bättre första sida med lite nyheter och bilder
 
-#### Version 1.4
+#### Version 1.4 - Filhantering
 * Lägg in funktionalitet för att ladda upp filer till servern (jmf inventory)
 * Lägg till fält för användarbild
     * Se till att bilden går att laddas upp från sidan
@@ -92,7 +108,7 @@ $twig = new \Twig\Environment($loader, [
 * Skapa javascript-funktioner så som softscroll på textsidorna.
 * Gör en internet-tid-klocka till sidan.
 
-### 4.0 - Functions
+### Version 4.0 - Functions
 
 #### 4.1 - Inventory
 * Lägg in inventory
@@ -119,7 +135,7 @@ $twig = new \Twig\Environment($loader, [
 
 Unplanned
 ---------------------------------------------------------------------------------------------------
-* Studera följande HTML-element: dialog, datalist och listproperty på en input, __input type="color/time"__, progressbar, open graph
+* Studera följande HTML-element: datalist och listproperty på en input, __input type="color/time"__, progressbar, open graph
 * Studera meta-taggar för tillbaka länkar till siten så som facebooks og (open graph) och twitters twitter-property
 * Studera template elementet
 * Lägg meta-taggen som tar hänsyn till hur robots ska hantera sidan
@@ -127,9 +143,28 @@ Unplanned
 * Gör en publik-struktur som inte innehåller 'Draft' sidor, och en privat struktur där användaren kan navigera bland publicerade och sina egna opublicerade sidor.
     * Om mappen är synlig (inget underscore) men index-filen är låst (Draft eller högre behörighets krav) så ska inte mappen heller visas.
 * Utred hur man kan textsöka bland filerna.
+* Det borde gå att slå ihop __translate_url__ och __route__ i __cls_site__ till en procedure så man kan ha en switch-sats istället för två.
+* Lyft in remove-markeringen från userlist i adminsidan till användarformuläret.
+* Inför en javascript varning i användarformuläret som ber om bekräftelse när en användare håller på att tas bort.
+* Gör så att en lång användarlista kan delas upp m h a limit, men att funktioner på admin-sidan fortfarande fungerar.
 
 Done
 ---------------------------------------------------------------------------------------------------
+### 2023-05-14
+* Sätt upp en adminsida
+    * Populera listan med verkliga data från db
+    * Lägg in funktionalitet som:
+        * godkänna användare (active),
+            * Lägg in en sänd-knapp i formuläret och styla den med css
+            * Gör en kontroller som hanterar uppdateringen
+            * Återgå till admin-sidan 
+* Lägg in navigering så att man kan ta sig tillbaka till första sidan åtminstone
+* Styla sidan med CSS
+
+### 2023-05-11
+* Sätt upp en adminsida:
+    * Sätt upp en rout med en dummy userlist
+
 ### 2023-05-07
 * Gör nytt försök till att sjösätta sidan
 * Dokumentera vilka delar som måste lyftas in manuellt när en ny site skapas (FA, composer install/update, npm update, etc)

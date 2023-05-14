@@ -10576,6 +10576,29 @@ pre code {
   padding: 0.5em;
 }
 
+/** tables.css */
+.tbl-common {
+  border-collapse: collapse;
+}
+.tbl-common thead tr {
+  background-color: #8892bf;
+}
+.tbl-common th {
+  font-family: "Mukta", sans-serif;
+  font-size: 0.9em;
+  text-align: left;
+  margin: 0px;
+  padding: 0.3rem;
+}
+.tbl-common td {
+  font-family: "Mukta", sans-serif;
+  margin: 0px;
+  padding: 0.3rem;
+}
+.tbl-common .cell-center {
+  text-align: center !important;
+}
+
 .page-metadata {
   font-size: 0.8em;
 }
@@ -10680,4 +10703,11 @@ pre code {
 .signupform .formfield input {
   grid-area: field;
   justify-self: stretch;
+}
+
+.userlist {
+  width: 100%;
+}
+.userlist tbody tr:nth-child(even) {
+  background-color: #a7c6f0;
 }
