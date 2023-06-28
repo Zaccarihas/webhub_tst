@@ -6,6 +6,7 @@
     $_PUBLIC_WEB_FOLDER = 'html';
     $_SECURE_WEB_FOLDER = 'secure';
     
+    // Get the path for the secure part of the site
     $secure_path = get_secure_path($_PUBLIC_WEB_FOLDER, $_SECURE_WEB_FOLDER);
 
     // Initiate

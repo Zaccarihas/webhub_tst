@@ -1,7 +1,9 @@
 In progress
 ---------------------------------------------------------------------------------------------------  
-* Studera HTML-elementet Dialog (modulär) och se hur det kan användas för att skapa popup-formulär för att ändra användardata
-
+* Lägg in så att man kan sätta en användares privilegier från userform.
+    * Lägg till en ny privilegie
+    * Ta bort en privilegie
+    * Se till att privilegier raderas när användaren raderas.
 
 Backlog
 ---------------------------------------------------------------------------------------------------
@@ -10,14 +12,10 @@ Backlog
 #### Version 1.2 - User management
 
 ##### Version 1.2.1 - Admin page
-* Sätt up en adminsida:
-    * Lägg in funktionalitet som:
-        * ta bort användare
-        * ändra användaruppgifter
-        * ändra lösenord
 * Gör en vy av alla sidor under content där man kan se varje sidas config data
+* Sjösätt och testa i produktionsmiljön
 
-##### Version 1.2.2 - Security
+##### Version 1.2.2 - Security update
 * Skicka inte med databasuppgifterna i session. Uppkopplingsdata hårdkodas in i varje controller.
 * Läs på mer om Twig enviroenment och hur man använder cache
 ~~~
@@ -26,12 +24,10 @@ $twig = new \Twig\Environment($loader, [
 ]);
 ~~~
 * Snygga till returen från authorize_user i authorization.php (inte snyggt med if-sats men jämförelsen med $pos misslyckades).
-* Studera kryptering. vad är skillnaden mellan rsa, escd, etc. Hur fungerar ssh och keychain
-    * Vad krävs för att sätta upp en vpn mot sidan
-    * Hur fungerar mina https-certifikat
 
-##### Version 1.2.2 - User page
+##### Version 1.2.3 - User page
 * Gör en profilsida för inloggad användare (kanske en privat (dold) och en publik).
+    * Gör så att profilsidorna visas via url __/user/username__
     * Gör en byline som kan visas vid dokument och inläggg som användaren har skapat
 * Presentera anropande ip-nummer
 * Gör en logg för varje användare över vilka ip de brukar ansluta från. 
@@ -41,8 +37,9 @@ $twig = new \Twig\Environment($loader, [
     * Kontrollera om fullständigt namn på ny användare har använts tidigare
     * kontrollera e-post mot reguljärt uttryck
     * Sätt minimum längd på lösenord
+    * Kontrollera att lösenord innehåller varierande tecken (versaler, gemener, siffror, och specialtecken)
 
-##### Version 1.2.3 - Improved messages and page meta data
+##### Version 1.2.4 - Improved messages and page meta data
 * Styla flash-meddelanden så att olika typer presenteras på olika sätt.
     * Ändra stilmallen så inget utrymme tas upp på sidan avsett för flashmeddelanden om inget meddelanden ska visas.
 * Presentera författare, status och role på varje sida
@@ -58,26 +55,42 @@ $twig = new \Twig\Environment($loader, [
 * Anpassa sida för bredare skärmar som tar tillvara mer av ytan.
 * Gör en bättre första sida med lite nyheter och bilder
 
-#### Version 1.4 - Filhantering
+### Version 2.0
+* Skapa en ny förgrening (fork) i git för version 2.0
+* Se serien Udamy Clone på youtube
+
+#### Version 2.1 - Filhantering
 * Lägg in funktionalitet för att ladda upp filer till servern (jmf inventory)
 * Lägg till fält för användarbild
     * Se till att bilden går att laddas upp från sidan
     * Använd användarbilden på profilsidorna och i byline
 * Snygga till Registration form genom att använda 8pt-metoden för att sätta storleken på fält bl a.
 
-### Version 2.0
-* Skapa en ny förgrening (fork) i git för version 2.0
-* Se serien Udamy Clone på youtube
-
-#### Version 2.1 - Online editing
+#### Version 2.2 - Online editing
 * Refactor och skapa mer OOP i befintliga klasser
+    * Strukturerar om routern så att man slipper registrera nya sidor på flera ställen i koden. (Kanske en funktionsmatris?)
+    * Det borde gå att slå ihop __translate_url__ och __route__ i __cls_site__ till en procedure så man kan ha en switch-sats istället för två.
 * Skapa en online md-editor
 * Gör en flernivåslista för navigering där man kan expandera och navigera sig i ett träd.
 
-#### Version 2.2 - Dynamiska sidor
+#### Version 2.3 - Dynamiska sidor
 * Utred hur dynamiska sidor ska hanteras. Ska de representeras av en md-fil med bara config-delen? Ska de ha en egen klass DynamicPage. Hur kan man nästla in statiska och dynamiska sidor i samma navigering.
+* Utred hur man bäst kan göra generella navigeringsfunktioner
+    * Kan man skapa menyer där man godtyckligt lägger in både statiska och dynamiska sidor
+    * Kan man skapa menyer utifrån en viss filstruktur (som den struktur som nu finns men med begränsningar kanske)
+    * Kan man skapa menyer utifrån meta-data om sidan (taxonomies exempelvis)
+    * Kan man ha olika menyer för olika användare, eller att samma meny visar olika alternativ beroende på användare och behörigheter
+* Gör en publik-struktur som inte innehåller 'Draft' sidor, och en privat struktur där användaren kan navigera bland publicerade och sina egna opublicerade sidor.
+    * Om mappen är synlig (inget underscore) men index-filen är låst (Draft eller högre behörighets krav) så ska inte mappen heller visas.
 * Gör om todo-list till en databaslista som kan hanteras via hemsidan.
 * Skapa och implementera en fritext-sökning på sidan (kan man använda någon sökmotors api eller måste man skapa en egen?)
+
+#### Version 2.4 - Security update
+* Studera kryptering. vad är skillnaden mellan rsa, escd, etc. Hur fungerar ssh och keychain
+    * Vad krävs för att sätta upp en vpn mot sidan
+    * Hur fungerar mina https-certifikat
+* Studera OAuth
+* Studera two factor authentication
 
 ### Version 3.0 - New Design
 
@@ -89,6 +102,7 @@ $twig = new \Twig\Environment($loader, [
 
 #### Version 3.2 - CSS
 * Gör ett helt nytt tema (mer modernt - utan klassiskt sidhuvud och sidfot) och testa att växla mellan de olika temorna
+    * Använd gärna lila och orange i temat
 * Beskriv css-enheter så som em, ex, px, pt, %, vw, rem etc
 * Beskriv de globala egenskapsvärdena (html/css) inherit, initial, revert, revert-layer och unset
 * Studera layoutmetoden float och beskriv den (inkl clearfix)
@@ -135,21 +149,58 @@ $twig = new \Twig\Environment($loader, [
 
 Unplanned
 ---------------------------------------------------------------------------------------------------
-* Studera följande HTML-element: datalist och listproperty på en input, __input type="color/time"__, progressbar, open graph
+* Studera följande HTML-element: datalist (verkar inte fungera i Firefox) och listproperty på en input, __input type="color/time"__, progressbar, open graph
 * Studera meta-taggar för tillbaka länkar till siten så som facebooks og (open graph) och twitters twitter-property
 * Studera template elementet
 * Lägg meta-taggen som tar hänsyn till hur robots ska hantera sidan
 * Lägg till så att sidor kan presenteras i olika mallar beroende på vilken template som angivits i yaml för sidan.
-* Gör en publik-struktur som inte innehåller 'Draft' sidor, och en privat struktur där användaren kan navigera bland publicerade och sina egna opublicerade sidor.
-    * Om mappen är synlig (inget underscore) men index-filen är låst (Draft eller högre behörighets krav) så ska inte mappen heller visas.
 * Utred hur man kan textsöka bland filerna.
-* Det borde gå att slå ihop __translate_url__ och __route__ i __cls_site__ till en procedure så man kan ha en switch-sats istället för två.
-* Lyft in remove-markeringen från userlist i adminsidan till användarformuläret.
 * Inför en javascript varning i användarformuläret som ber om bekräftelse när en användare håller på att tas bort.
 * Gör så att en lång användarlista kan delas upp m h a limit, men att funktioner på admin-sidan fortfarande fungerar.
+* Utveckla vyn på admin-sidan över statiska sidor, med att inkludera även dynamiska sidor.
+* Studera HTML-elementet Dialog (modulär) och se hur det kan användas för att skapa popup-formulär för att ändra användardata (https://www.youtube.com/watch?v=ywtkJkxJsdg)
+* Gör en ny typ av navigering för bloggen som sorterar inläggen i datumordning istället för på rubrik.
+* Gör en egen sidmall för blogg-inlägg
+    * Studera hur andra bloggar brukar vara stylade och strukturerade.
+* Skapa sidor på sidan utifrån de noteringar som jag hittills lagt i OneNote
+* Site objektet borde köra initieringen (starta autoloaders, error reporting och sessions) istället för direkt från index, för att minska kommunikationen mellan publik och säker yta.
+* Se över vad som behöver läggas i session för att undvika risker vid session hijaaking (jmf Site / __construct)
+* Jämför variablerna och egenskaperna: Site/nav, Site/path, Site/public_folder, Session/site_url, Session/public_folder. När och var används de. Kan någon reduceras bort?
+
+
+
+
 
 Done
 ---------------------------------------------------------------------------------------------------
+### 2023-06-27
+* Lägg in så att man kan sätta en användares privilegier från userform.
+    * Visa nuvarande privilegier
+
+### 2023-05-28
+* Sätt upp en adminsida:
+    * Lägg in funktionalitet som:
+        * registrera nya användare
+            * Se till att man kommer tillbaka till admin när man registrerar från admin och till frontpage när man registrerar via Register
+        * ändra användaruppgifter
+        * ändra lösenord
+* Se till att man kan aktivera en användare från userform
+* Lägg till en tillbaka knapp i userform som tar en tillbaka till adminsidan
+* Gör så att active indikeringen i userlist inte går att ändra (ska vara bara en markering)
+
+### 2023-05-19
+* Sätt upp en adminsida:
+    * Lägg in funktionalitet som:
+        * ta bort användare
+            * Skapa en knapp för att radera användaren
+
+### 2023-05-17
+* Sätt upp en adminsida:
+    * Lägg in funktionalitet som:
+        * ta bort användare
+            * Gör ett userform
+            * Länka samman userlist med userform via en länk och routing
+
 ### 2023-05-14
 * Sätt upp en adminsida
     * Populera listan med verkliga data från db
