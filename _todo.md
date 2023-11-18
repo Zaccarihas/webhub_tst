@@ -1,9 +1,10 @@
 In progress
 ---------------------------------------------------------------------------------------------------  
-* Lägg in så att man kan sätta en användares privilegier från userform.
-    * Lägg till en ny privilegie
-    * Ta bort en privilegie
-    * Se till att privilegier raderas när användaren raderas.
+* Refactor och skapa mer OOP i befintliga klasser
+    * Strukturerar om routern så att man slipper registrera nya sidor på flera ställen i koden. (Kanske en funktionsmatris?)
+    * Det borde gå att slå ihop __translate_url__ och __route__ i __cls_site__ till en procedure så man kan ha en switch-sats istället för två.
+
+
 
 Backlog
 ---------------------------------------------------------------------------------------------------
@@ -67,9 +68,6 @@ $twig = new \Twig\Environment($loader, [
 * Snygga till Registration form genom att använda 8pt-metoden för att sätta storleken på fält bl a.
 
 #### Version 2.2 - Online editing
-* Refactor och skapa mer OOP i befintliga klasser
-    * Strukturerar om routern så att man slipper registrera nya sidor på flera ställen i koden. (Kanske en funktionsmatris?)
-    * Det borde gå att slå ihop __translate_url__ och __route__ i __cls_site__ till en procedure så man kan ha en switch-sats istället för två.
 * Skapa en online md-editor
 * Gör en flernivåslista för navigering där man kan expandera och navigera sig i ett träd.
 
@@ -167,12 +165,14 @@ Unplanned
 * Se över vad som behöver läggas i session för att undvika risker vid session hijaaking (jmf Site / __construct)
 * Jämför variablerna och egenskaperna: Site/nav, Site/path, Site/public_folder, Session/site_url, Session/public_folder. När och var används de. Kan någon reduceras bort?
 
-
-
-
-
 Done
 ---------------------------------------------------------------------------------------------------
+### 2023-11-13
+* Lägg in så att man kan sätta en användares privilegier från userform.
+    * Lägg till en ny privilegie
+    * Ta bort en privilegie
+    * Se till att privilegier raderas när användaren raderas.
+
 ### 2023-06-27
 * Lägg in så att man kan sätta en användares privilegier från userform.
     * Visa nuvarande privilegier
