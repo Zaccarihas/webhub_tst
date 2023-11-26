@@ -1,10 +1,14 @@
 In progress
 ---------------------------------------------------------------------------------------------------  
 * Refactor och skapa mer OOP i befintliga klasser
+    * Gör så att anrop till page-controllers går direkt till controllern utan att gå via routern.
+        * ctrl_admin
+            * Gör en ny klass för config-läsare som läser config-filen och skapar ett objekt där varje egenskap i filen lagras som en associerad matris
+            med attributnamnen som nyckelvärden.
+            * Var ska formuläret i admin.twig peka för att hitta till ctrl_admin.php
     * Strukturerar om routern så att man slipper registrera nya sidor på flera ställen i koden. (Kanske en funktionsmatris?)
     * Det borde gå att slå ihop __translate_url__ och __route__ i __cls_site__ till en procedure så man kan ha en switch-sats istället för två.
-
-
+* Utred hur dynamiska sidor ska hanteras. Ska de representeras av en md-fil med bara config-delen? Ska de ha en egen klass DynamicPage. Hur kan man nästla in statiska och dynamiska sidor i samma navigering.
 
 Backlog
 ---------------------------------------------------------------------------------------------------
@@ -34,6 +38,7 @@ $twig = new \Twig\Environment($loader, [
 * Gör en logg för varje användare över vilka ip de brukar ansluta från. 
     * Låt användaren bestämma om endast betrodda ip-nummer får användas för uppkoppling eller om användaren vill ha en varning med möjlighet till utloggning och spärr om inloggning sker från okänt ip-nummer.
 * Gör så att redan inmatade fält i registration-form bevaras ifall man blir återkopplad efter en felaktig registrering. (ex om password confirmation inte fungerar.)
+* Registrera IP som användes vid registrering av ny användare.
 * Inför mer kontroller kring registrering av användare:
     * Kontrollera om fullständigt namn på ny användare har använts tidigare
     * kontrollera e-post mot reguljärt uttryck
@@ -72,7 +77,6 @@ $twig = new \Twig\Environment($loader, [
 * Gör en flernivåslista för navigering där man kan expandera och navigera sig i ett träd.
 
 #### Version 2.3 - Dynamiska sidor
-* Utred hur dynamiska sidor ska hanteras. Ska de representeras av en md-fil med bara config-delen? Ska de ha en egen klass DynamicPage. Hur kan man nästla in statiska och dynamiska sidor i samma navigering.
 * Utred hur man bäst kan göra generella navigeringsfunktioner
     * Kan man skapa menyer där man godtyckligt lägger in både statiska och dynamiska sidor
     * Kan man skapa menyer utifrån en viss filstruktur (som den struktur som nu finns men med begränsningar kanske)
@@ -164,6 +168,7 @@ Unplanned
 * Site objektet borde köra initieringen (starta autoloaders, error reporting och sessions) istället för direkt från index, för att minska kommunikationen mellan publik och säker yta.
 * Se över vad som behöver läggas i session för att undvika risker vid session hijaaking (jmf Site / __construct)
 * Jämför variablerna och egenskaperna: Site/nav, Site/path, Site/public_folder, Session/site_url, Session/public_folder. När och var används de. Kan någon reduceras bort?
+* Utred: Ska index.php verkligen sätta index.md vid anropet till Site-objektet eller ska det sättas i constructorn. Om det ligger kvar som det gör nu så har man möjlighet att välja en annan ingångssida, men anropet blir enklare från index.php om default sidan sätts i objektet. Frågan kvarstår dock hur defaultsidan ska definieras inom objektet: ska det alltid vara index.md under content eller ska detta vara en egenskap som kan ändras?
 
 Done
 ---------------------------------------------------------------------------------------------------

@@ -13,5 +13,5 @@
     require_once($secure_path . '/controllers/init.php');
 
     // Create the Site-object and route to the requested page
-    $hub = new Site(__DIR__, $_GET['page'] ?? 'index.md');
+    $hub = new Site(__DIR__, $_GET['url'] ?? 'index.md');
     $hub->route();

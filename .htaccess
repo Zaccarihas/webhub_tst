@@ -1,3 +1,3 @@
 RewriteEngine on
 
-RewriteRule ^([\w//]+)$ index.php?page=$1 [QSA]
+RewriteRule ^([\w//]+)$ index.php?url=$1 [QSA]
