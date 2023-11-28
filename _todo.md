@@ -1,11 +1,6 @@
 In progress
 ---------------------------------------------------------------------------------------------------  
 * Refactor och skapa mer OOP i befintliga klasser
-    * Gör så att anrop till page-controllers går direkt till controllern utan att gå via routern.
-        * ctrl_admin
-            * Gör en ny klass för config-läsare som läser config-filen och skapar ett objekt där varje egenskap i filen lagras som en associerad matris
-            med attributnamnen som nyckelvärden.
-            * Var ska formuläret i admin.twig peka för att hitta till ctrl_admin.php
     * Strukturerar om routern så att man slipper registrera nya sidor på flera ställen i koden. (Kanske en funktionsmatris?)
     * Det borde gå att slå ihop __translate_url__ och __route__ i __cls_site__ till en procedure så man kan ha en switch-sats istället för två.
 * Utred hur dynamiska sidor ska hanteras. Ska de representeras av en md-fil med bara config-delen? Ska de ha en egen klass DynamicPage. Hur kan man nästla in statiska och dynamiska sidor i samma navigering.
@@ -172,6 +167,13 @@ Unplanned
 
 Done
 ---------------------------------------------------------------------------------------------------
+### 2023-11-27
+* Gör så att anrop till page-controllers går direkt till controllern utan att gå via routern.
+    * ctrl_admin
+        * Gör en ny klass för config-läsare som läser config-filen och skapar ett objekt där varje egenskap i filen lagras som en associerad matris
+          med attributnamnen som nyckelvärden.
+        * Var ska formuläret i admin.twig peka för att hitta till ctrl_admin.php
+        
 ### 2023-11-13
 * Lägg in så att man kan sätta en användares privilegier från userform.
     * Lägg till en ny privilegie
